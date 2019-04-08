@@ -15,10 +15,10 @@ if(empty($_POST["login_Button"])){
         $errorMessage = "パスワードが未入力です";
     }
     //ユーザ名もパスも入力されていたら
-    if(!empty($_POST["username"] && !empty($_POST["password"])){
+//    if(!empty($_POST["username"] && !empty($_POST["password"])){
         //postgresSQLに接続
         
-    }
+//    }
 }
 
 ?>
