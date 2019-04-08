@@ -30,7 +30,7 @@ if (isset($_POST['login'])) {
         $_SESSION['password'] = $_POST['password'];
 
         $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
-$errorMessage = $_SESSION['username'];
+$errorMessage = $connectString;
         if(!$result = pg_connect($connectString)){
             //接続失敗
             $errorMessage = $_SESSION['username'];
