@@ -14,6 +14,7 @@ $db['dbname'] = ltrim($dbUrl['path'], '/');;  // データベース名
 
 //エラーメッセージの初期化
 $errorMessage = "";
+$loginerror = "";
 
 // ログインボタンが押された場合
 if (isset($_POST['login'])) {
@@ -40,7 +41,14 @@ if (isset($_POST['login'])) {
 
         $select = sprintf("SELECT * FROM userInfo WHERE username='%s' and password='%s'",$_SESSION['username'],$_SESSION['password']);
         $errorMessage = $select;
-        $result = pg_query();
+        $result = pg_query($select);
+        
+        if(empty($result)){
+            $loginerror = '入力されたユーザ又はパスワードは存在しません';
+        }else
+        {
+            $loginerror = $result;
+        }
 
         // 2. ユーザとパスワードが入力されていたら認証する
 //        $dsn = sprintf('pgsql: host=%s; dbname=%s;', $db['host'], $db['dbname']);
@@ -104,6 +112,7 @@ if (isset($_POST['login'])) {
                 <label for="password">パスワード</label><input type="password" id="password" name="password" value="" placeholder="パスワードを入力">
                 <br>
                 <input type="submit" id="login" name="login" value="ログイン">
+                <div><font color="#ff0000"><?php echo htmlspecialchars($loginerror, ENT_QUOTES); ?></font></div>
             </fieldset>
     </body>
 </html>
