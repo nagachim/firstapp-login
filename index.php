@@ -16,17 +16,17 @@ $db['dbname'] = ltrim($dbUrl['path'], '/');;  // データベース名
 $errorMessage = "";
 
 // ログインボタンが押された場合
-if (isset($_POST["login"])) {
+if (isset($_POST['login'])) {
     // 1. ユーザIDの入力チェック
-    if (empty($_POST["username"])) {  // emptyは値が空のとき
+    if (empty($_POST['username'])) {  // emptyは値が空のとき
         $errorMessage = 'ユーザーIDが未入力です。';
-    } else if (empty($_POST["password"])) {
+    } else if (empty($_POST['password'])) {
         $errorMessage = 'パスワードが未入力です。';
     }
     
-    if (!empty($_POST["username"]) && !empty($_POST["password"])) {
+    if (!empty($_POST['username']) && !empty($_POST['password'])) {
         // 入力したユーザIDを格納
-        $username = $_POST["username"];
+        $username = $_POST['username'];
 
         // 2. ユーザIDとパスワードが入力されていたら認証する
         $dsn = sprintf('pgsql: host=%s; dbname=%s;', $db['host'], $db['dbname']);
