@@ -37,7 +37,7 @@ if (isset($_POST['login'])) {
             //接続失敗
             $errorMessage = $_SESSION['username'];
             header("Location: index.html");
-            exit
+            exit();
         }
 
 
