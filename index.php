@@ -46,7 +46,7 @@ if (isset($_POST['login'])) {
             $loginerror = '入力されたユーザ又はパスワードは存在しません';
         }else
         {
-            $loginerror = $sqlresult;
+            header("Location: Main.php"); 
         }
 
         // 2. ユーザとパスワードが入力されていたら認証する

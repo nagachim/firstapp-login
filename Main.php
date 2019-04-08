@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$string = (string)filter_input(INPUT_POST,$_SESSION['NAME']);
+$string = (string)filter_input(INPUT_POST,$_SESSION['username']);
 if ($string){
     $string = htmlspecialchar($string, ENT_QUOTES,'SJIS-win');
 } else {
@@ -10,7 +10,7 @@ if ($string){
 
 
 // ログイン状態チェック
-//if (!isset($_SESSION['NAME'])) {
+//if (!isset($_SESSION['username'])) {
 if (!isset($string)) {
     header("Location: logout.php");
     exit;
@@ -28,7 +28,7 @@ if (!isset($string)) {
     <body>
         <h1>メイン画面</h1>
         <!-- ユーザーIDにHTMLタグが含まれても良いようにエスケープする -->
-<!--        <p>ようこそ<u><?php echo htmlspecialchars($_SESSION['NAME'], ENT_QUOTES); ?></u>さん</p>   -->
+<!--        <p>ようこそ<u><?php echo htmlspecialchars($_SESSION['username'], ENT_QUOTES); ?></u>さん</p>   -->
             <p>ようこそ<u><?php echo htmlspecialchars($string, ENT_QUOTES); ?></u>さん</p>
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
