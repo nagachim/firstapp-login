@@ -8,11 +8,13 @@ if (!isset($_SESSION['NAME'])) {
 }
 ?>
 
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="ja">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <title>ƒƒCƒ“</title>
+        <link rel= "stylesheet" href="style.css">
+        <script src="script.js"></script>
     </head>
     <body>
         <h1>ƒƒCƒ“‰æ–Ê</h1>
