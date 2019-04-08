@@ -2,17 +2,19 @@
 <html lang="ja">
     <head>
         <meta charset="utf-8">
-        <title>テストログインサイト</title>
+        <title>ログイン画面</title>
         <link rel= "stylesheet" href="style.css">
         <script src="script.js"></script>
     </head>
     <body>
-        <form action="index.php" method="POST">
-        UserName:<input type ="text" name="username" value="nagachim"><br />
-        <br />
-        PassWord:<input type ="text" name="password" value="nagata0706"><br />
-        <br />
-        <br />
-        <input type="submit" name="login" value="ログイン">
+        <form id="loginForm" name="loginForm" action="index.php" method="POST">
+            <fieldset>
+                <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
+                <label for="username">ユーザ名</label><input type="text" id="username" name="username" placeholder="ユーザ名を入力" value="<?php if (!empty($_POST['username'])) {echo htmlspecialchars($_POST['username'], ENT_QUOTES);} ?>">
+                <br>
+                <label for="password">パスワード</label><input type="password" id="password" name="password" value="" placeholder="パスワードを入力">
+                <br>
+                <input type="submit" id="login" name="login" value="ログイン">
+            </fieldset>
     </body>
 </html>
