@@ -15,9 +15,9 @@ $_SESSION = array();
 ?>
 
 <!doctype html>
-<html>
+<html lang="ja">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="shift_JIS">
         <title>ログアウト</title>
     </head>
     <body>

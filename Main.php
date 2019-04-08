@@ -10,7 +10,8 @@ if ($string){
 
 
 // ログイン状態チェック
-if (!isset($_SESSION['NAME'])) {
+//if (!isset($_SESSION['NAME'])) {
+if (!isset($string)) {
     header("Location: logout.php");
     exit;
 }
@@ -27,7 +28,8 @@ if (!isset($_SESSION['NAME'])) {
     <body>
         <h1>メイン画面</h1>
         <!-- ユーザーIDにHTMLタグが含まれても良いようにエスケープする -->
-        <p>ようこそ<u><?php echo htmlspecialchars($_SESSION['NAME'], ENT_QUOTES); ?></u>さん</p>  <!-- ユーザー名をechoで表示 -->
+<!--        <p>ようこそ<u><?php echo htmlspecialchars($_SESSION['NAME'], ENT_QUOTES); ?></u>さん</p>   -->
+            <p>ようこそ<u><?php echo htmlspecialchars($string, ENT_QUOTES); ?></u>さん</p>
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
         </ul>
