@@ -85,3 +85,25 @@ if (isset($_POST['login'])) {
     }
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>ログイン画面</title>
+        <link rel= "stylesheet" href="style.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <form id="loginForm" name="loginForm" action="" method="POST" accept-charset="shift_JIS">
+            <fieldset>
+                <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
+                <label for="username">ユーザ名</label><input type="text" id="username" name="username" placeholder="ユーザ名を入力" value="">
+                <br>
+                <label for="password">パスワード</label><input type="password" id="password" name="password" value="" placeholder="パスワードを入力">
+                <br>
+                <input type="submit" id="login" name="login" value="ログイン">
+            </fieldset>
+    </body>
+</html>
+
