@@ -2,7 +2,7 @@
 
 session_start();
 
-header('Location: /index.html');
+//header('Location: /index.html');
 
 $dbUrl = parse_url(getenv('DATABASE_URL'));
 
