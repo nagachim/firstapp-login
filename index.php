@@ -38,7 +38,7 @@ if (isset($_POST['login'])) {
             exit();
         }
 
-        $select = sprintf('SELECT * FROM userInfo WHERE username=%s and password=%s',$_SESSION['username'],$_SESSION['password']);
+        $select = sprintf("SELECT * FROM userInfo WHERE username='%s' and password='%s'",$_SESSION['username'],$_SESSION['password']);
         $errorMessage = $select;
         $result = pg_query();
 
