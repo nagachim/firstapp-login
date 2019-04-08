@@ -20,10 +20,8 @@ if (isset($_POST['login'])) {
     // 1. ユーザIDの入力チェック
     if (empty($_POST['username'])) {  // emptyは値が空のとき
         $errorMessage = 'ユーザーIDが未入力です。';
-        header("Location: index.html");
     } else if (empty($_POST['password'])) {
         $errorMessage = 'パスワードが未入力です。';
-        header("Location: index.html");
     }
     
     if (!empty($_POST['username']) && !empty($_POST['password'])) {
@@ -36,7 +34,6 @@ if (isset($_POST['login'])) {
         if(!$result = pg_connect($connectString)){
             //接続失敗
             $errorMessage = $_SESSION['username'];
-            header("Location: index.html");
             exit();
         }
 
