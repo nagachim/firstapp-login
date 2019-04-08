@@ -40,13 +40,13 @@ if (isset($_POST['login'])) {
         }
 
         $select = sprintf("SELECT * FROM userInfo WHERE username='%s' and password='%s'",$_SESSION['username'],$_SESSION['password']);
-        $result = pg_query($select);
+        $sqlresult = pg_query($select);
         
-        if(empty($result)){
+        if(!$sqlresult){
             $loginerror = '入力されたユーザ又はパスワードは存在しません';
         }else
         {
-            $loginerror = $result;
+            $loginerror = $sqlresult;
         }
 
         // 2. ユーザとパスワードが入力されていたら認証する
