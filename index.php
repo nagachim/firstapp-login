@@ -29,14 +29,18 @@ if (isset($_POST['login'])) {
         $_SESSION['username'] = $_POST['username'];
         $_SESSION['password'] = $_POST['password'];
 
+        //DB接続情報作成
         $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
-$errorMessage = $connectString;
+        //DB接続
         if(!$result = pg_connect($connectString)){
             //接続失敗
-            $errorMessage = $_SESSION['username'];
+            $errorMessage = '予期せぬエラーが発生';
             exit();
         }
 
+        $select = sprintf('SELECT * FROM userInfo WHERE username=%s and password=%s',$_SESSION['username'],$_SESSION['password']);
+        $errorMessage = $select;
+        $result = pg_query();
 
         // 2. ユーザとパスワードが入力されていたら認証する
 //        $dsn = sprintf('pgsql: host=%s; dbname=%s;', $db['host'], $db['dbname']);
