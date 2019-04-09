@@ -1,6 +1,6 @@
 <?php
 session_start();
-header('Content-Type: text/html; charset=UTF-8');
+header('Content-Type: text/html; charset=shift_JIS');
 
 $string = (string)filter_input(INPUT_POST,$_SESSION['username']);
 if ($string){
