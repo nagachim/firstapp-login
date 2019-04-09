@@ -102,11 +102,12 @@ if (isset($_POST['login'])) {
         <script src="script.js"></script>
     </head>
     <body>
+        <H1>ログイン画面</h1>
         <form id="loginForm" name="loginForm" action="" method="POST" accept-charset="shift_JIS">
             <fieldset>
-                <label for="username">ユーザ名</label><input type="text" id="username" name="username" placeholder="ユーザ名を入力" value="">
+                <label for="username">ユーザ名　：</label><input type="text" id="username" name="username" placeholder="ユーザ名を入力" value="">
                 <br>
-                <label for="password">パスワード</label><input type="password" id="password" name="password" value="" placeholder="パスワードを入力">
+                <label for="password">パスワード：</label><input type="password" id="password" name="password" value="" placeholder="パスワードを入力">
                 <br>
                 <input type="submit" id="login" name="login" value="ログイン">
                 <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
