@@ -13,7 +13,7 @@ if (!isset($string)) {
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="shift_JIS">
+        <meta http-equiv="content-type" charset="utf-8">
         <title>メイン</title>
         <link rel= "stylesheet" href="style.css">
         <script src="script.js"></script>
