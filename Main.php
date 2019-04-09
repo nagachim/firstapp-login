@@ -21,31 +21,58 @@ if (!isset($_SESSION['username'])) {
         <h1>ƒƒCƒ“‰æ–Ê</h1>
         <p>‚æ‚¤‚±‚»<u><?php echo htmlspecialchars($_SESSION['username'], ENT_QUOTES); ?></u>‚³‚ñ</p>
         <pre>
-        
-                  áá                áá
-                  áá                áá
-          áááááááááááááááááááá
-          áááááááááááááááááááá
-                  áá                áá
-                  áá                áá
-          
-                          ááá
-                         áá
-                        áá
-          áááááááááááááááááááá
-          ááááááááááááááááááá
-                     áá
-                    áá
-                   áá
-                  ááááááááááááááá
-                 áá áá                áá
-                áá  áá                áá
-               áá   áá                áá
-              áá    áá                áá
-             áá     áááááááááááá
-            á
-          
-        
+        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”Táááááá”T”T”T”T”T”Táááááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”Táááááá”T”T”T”T”T”Táááááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”Tááááá”T”T”T”T”T”T”Tááááá”T”T”T”Táá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”Táááá”T”T”T”T”T”T”T”Táááá”T”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”Táááá”T”T”T”T”T”T”T”Táááá”T”T”T”Tááááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”Tááááááááááááááááááááááááááááááááááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”Tááááááááááááááááááááááááááááááááááááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”Táááá”T”T”T”T”T”T”T”Táááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”Táááá”T”T”T”T”T”T”T”Táááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”Táááá”Táá”T”T”T”T”Táááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”Táááá”Tááá”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”T”Tááá”Tááááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”Táááááá”T”T”T”T”T”T”T”T”T”T”Tá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”Tááááá”T”T”T”T”T”T”T”T”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”Táááá”T”T”T”T”T”T”T”T”T”T”T”Tááááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”Tááááááááááááááááááááááááááááááááááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”Tááááááááááááááááááááááááááááááááááááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”T”T”Táááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”T”Táááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”Táááá”T”T”T”T”T”T”T”T”T”T”T”Tá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”Táááá”T”T”T”T”T”T”T”T”T”T”T”T”Táá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”Táááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”Táááááááááááááááááááááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”Táááááá”T”T”T”T”T”T”T”T”T”T”T”T”Tááááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”Tááááááá”T”T”T”T”T”T”T”T”T”T”T”T”Táááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”Tááá”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”Tááá”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”Tááá”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”Tááá”T”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”Tááá”T”T”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”Tááá”T”T”T”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”Tááááááááááááááááááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”Tááá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”Táá”T”T”T”T”T”T”T”T”T”T”T”T”T”Táá”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
+
+
+
+
+
+
+
+
         </pre>
         <ul>
             <li><a href="logout.php">ƒƒOƒAƒEƒg</a></li>
