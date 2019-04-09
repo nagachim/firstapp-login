@@ -1,6 +1,6 @@
 <?php
 session_start();
-header('Content-Type: text/html; charset=UTF-8');
+header('Content-Type: text/html; charset=shift_JIS');
 
 if (isset($_SESSION['username'])) {
     $errorMessage = "ログアウトしました。";
@@ -25,7 +25,7 @@ $_SESSION = array();
         <h1>ログアウト画面</h1>
         <div><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></div>
         <ul>
-            <li><a href="Login.php">ログイン画面に戻る</a></li>
+            <li><a href="index.php">ログイン画面に戻る</a></li>
         </ul>
     </body>
 </html>
