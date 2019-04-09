@@ -19,7 +19,7 @@ $loginerror = "";
 if (isset($_POST['login'])) {
     // 1. ユーザIDの入力チェック
     if (empty($_POST['username'])) {  // emptyは値が空のとき
-        $errorMessage = 'ユーザーIDが未入力です。';
+        $errorMessage = 'ユーザ名が未入力です。';
     } else if (empty($_POST['password'])) {
         $errorMessage = 'パスワードが未入力です。';
     }
@@ -108,6 +108,7 @@ if (isset($_POST['login'])) {
                 <label for="username">ユーザ名　：</label><input type="text" id="username" name="username" placeholder="ユーザ名を入力" value="">
                 <br>
                 <label for="password">パスワード：</label><input type="password" id="password" name="password" value="" placeholder="パスワードを入力">
+                <br>
                 <br>
                 <input type="submit" id="login" name="login" value="ログイン">
                 <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
