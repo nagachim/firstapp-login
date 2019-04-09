@@ -2,6 +2,14 @@
 session_start();
 header('Content-Type: text/html; charset=UTF-8');
 
+$string = (string)filter_input(INPUT_POST,$_SESSION['username']);
+if ($string){
+    $string = htmlspecialchar($string, ENT_QUOTES,'SJIS-win');
+} else {
+    $string = 'no data.';
+}
+
+
 // ログイン状態チェック
 //if (!isset($_SESSION['username'])) {
 if (!isset($string)) {
@@ -13,14 +21,16 @@ if (!isset($string)) {
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta http-equiv="content-type" charset="utf-8">
+        <meta charset="shift_JIS">
         <title>メイン</title>
         <link rel= "stylesheet" href="style.css">
         <script src="script.js"></script>
     </head>
     <body>
         <h1>メイン画面</h1>
-        <p>ようこそ<u><?php echo htmlspecialchars($_SESSION['username'], ENT_QUOTES); ?></u>さん</p>
+        <!-- ユーザーIDにHTMLタグが含まれても良いようにエスケープする -->
+<!--        <p>ようこそ<u><?php echo htmlspecialchars($_SESSION['username'], ENT_QUOTES); ?></u>さん</p>   -->
+            <p>ようこそ<u><?php echo htmlspecialchars($string, ENT_QUOTES); ?></u>さん</p>
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
         </ul>
