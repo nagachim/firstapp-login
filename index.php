@@ -26,8 +26,7 @@ if (isset($_POST['login'])) {
     
     if (!empty($_POST['username']) && !empty($_POST['password'])) {
         // 入力したユーザを格納
-        $_SESSION['username'] = $_POST['username'];
-        $_SESSION['password'] = $_POST['password'];
+        $name = $_POST['username'];
 
         //DB接続情報作成
         $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
@@ -45,6 +44,7 @@ if (isset($_POST['login'])) {
             $loginerror = '入力されたユーザ又はパスワードは存在しません';
         }else
         {
+            $_SESSION['username'] = $name;
             header("Location: Main.php"); 
         }
 
