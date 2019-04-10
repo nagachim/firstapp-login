@@ -8,7 +8,6 @@ if (!isset($_SESSION['nickname'])) {
     exit;
 }
 
-mb_internal_encoding('UTF-8');
 $text = $_SESSION['nickname'];
 $text = mb_convert_encoding($text, 'Shift-JIS', 'UTF-8');
 
