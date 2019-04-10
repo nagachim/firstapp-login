@@ -53,19 +53,17 @@ if (isset($_POST['login'])) {
             //ログイン回数カウント
             $cnt = $array[4];
             $cnt = $cnt + 1;
-            $logincnt = array(
-                'logincnt' => $cnt
-            );
             $_SESSION['logincnt'] = $cnt;
             
             //セッションにユーザ名を保存
-            $wherename = array(
-                'username' => $name
-            );
             $_SESSION['username'] = $name;
             
-           var_dump( pg_update($connectString,'userinfo',$logincnt,$wherename));
-            //$update = sprintf("UPDATE userInfo SET loginCnt=%d where username='%s'",$cnt,$name);
+            //ログイン回数をアップデート文で更新
+            $update = sprintf("UPDATE userInfo SET loginCnt=%d where username='%s'",$cnt,$name);
+            $updresult = pg_query($update);
+            if(!$updresult){
+                $errorMessage = '予期せぬエラーが発生（ＵＰＤＡＴＥ）';
+            }
             header("Location: Main.php");
         }
 
