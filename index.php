@@ -52,7 +52,7 @@ if (isset($_POST['login'])) {
             
             //ログイン成功時に表示するニックネームをセッションに
             $nickname = $array[3];
-            $nickname = mb_convert_encoding($nickname,'SJIS','UTF-8');
+            $nickname = mb_convert_encoding($nickname,"SJIS","UTF-8");
             $_SESSION['nickname'] = $nickname;
             
             //ログイン回数カウント
