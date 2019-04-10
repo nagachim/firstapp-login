@@ -1,6 +1,6 @@
 <?php
 session_start();
-header('Content-Type: text/html; charset=shift_JIS');
+header('Content-Type: text/html; charset=UTF-8');
 
 // ログイン状態チェック
 if (!isset($_SESSION['nickname'])) {
@@ -13,7 +13,7 @@ if (!isset($_SESSION['nickname'])) {
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="shift_JIS">
+        <meta charset="UTF-8">
         <title>メイン</title>
         <link rel= "stylesheet" href="font.css">
         <script src="script.js"></script>

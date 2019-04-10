@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-header('Content-Type: text/html; charset=shift_JIS');
+header('Content-Type: text/html; charset=UTF-8');
 
 $dbUrl = parse_url(getenv('DATABASE_URL'));
 
@@ -114,14 +114,14 @@ if (isset($_POST['login'])) {
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="shift_JIS">
+        <meta charset="UTF-8">
         <title>ログイン画面</title>
         <link rel= "stylesheet" href="style.css">
         <script src="script.js"></script>
     </head>
     <body>
         <H1>ログイン画面</h1>
-        <form id="loginForm" name="loginForm" action="" method="POST" accept-charset="shift_JIS">
+        <form id="loginForm" name="loginForm" action="" method="POST" accept-charset="UTF-8">
             <fieldset>
                 <label for="username">ユーザ名　：</label><input type="text" id="username" name="username" placeholder="ユーザ名を入力" value="">
                 <br>
