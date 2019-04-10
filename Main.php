@@ -3,7 +3,7 @@ session_start();
 header('Content-Type: text/html; charset=shift_JIS');
 
 // ログイン状態チェック
-if (!isset($_SESSION['username'])) {
+if (!isset($_SESSION['nickname'])) {
     header("Location: logout.php");
     exit;
 }
@@ -19,7 +19,9 @@ if (!isset($_SESSION['username'])) {
     </head>
     <body>
         <h1>メイン画面</h1>
-        <p>ようこそ<u><?php echo htmlspecialchars($_SESSION['username'], ENT_QUOTES); ?></u>さん</p>
+        <p>ようこそ<u><?php echo htmlspecialchars($_SESSION['nickname'], ENT_QUOTES); ?></u>さん</p>
+        <p><u><?php echo htmlspecialchars($_SESSION['logincnt'], ENT_QUOTES); ?></u></p>
+        <p><u><?php echo htmlspecialchars($_SESSION['username'], ENT_QUOTES); ?></u></p>
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
         </ul>
