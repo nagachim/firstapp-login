@@ -53,11 +53,16 @@ if (isset($_POST['login'])) {
             //ログイン回数カウント
             $cnt = $array[4];
             $cnt = $cnt + 1;
+            $logincnt = array(
+                'logincnt' => $cnt
+            );
             $_SESSION['logincnt'] = $cnt;
             
             //セッションにユーザ名を保存
             $_SESSION['username'] = $name;
-            $update = sprintf("UPDATE userInfo SET loginCnt=%d where username='%s'",$cnt,$name);
+            
+           var_dump( pg_update($connectString,'userinfo',$logincnt,'username'=$name));
+            //$update = sprintf("UPDATE userInfo SET loginCnt=%d where username='%s'",$cnt,$name);
             header("Location: Main.php");
         }
 
