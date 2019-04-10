@@ -59,11 +59,11 @@ if (isset($_POST['login'])) {
             $_SESSION['username'] = $name;
             
             //ログイン回数をアップデート文で更新
-            $update = sprintf("UPDATE userInfo SET loginCnt=%d where username='%s'",$cnt,$name);
-            $updresult = pg_query($update);
-            if(!$updresult){
-                $errorMessage = '予期せぬエラーが発生（ＵＰＤＡＴＥ）';
-            }
+            //$update = sprintf("UPDATE userInfo SET loginCnt=%d where username='%s'",$cnt,$name);
+            //$updresult = pg_query($update);
+            //if(!$updresult){
+            //    $errorMessage = '予期せぬエラーが発生（ＵＰＤＡＴＥ）';
+            //}
             header("Location: Main.php");
         }
 
