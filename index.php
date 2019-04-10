@@ -27,6 +27,7 @@ if (isset($_POST['login'])) {
     if (!empty($_POST['username']) && !empty($_POST['password'])) {
         // 入力したユーザを格納
         $name = $_POST['username'];
+        $pass = $_POST['password'];
 
         //DB接続情報作成
         $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
@@ -37,7 +38,7 @@ if (isset($_POST['login'])) {
             exit();
         }
 
-        $select = sprintf("SELECT * FROM userInfo WHERE username='%s' and password='%s'",$_SESSION['username'],$_SESSION['password']);
+        $select = sprintf("SELECT * FROM userInfo WHERE username='%s' and password='%s'",$name,$pass);
         $sqlresult = pg_query($select);
         
         if(!$sqlresult){
@@ -50,21 +51,9 @@ if (isset($_POST['login'])) {
             //ログイン成功時に表示するニックネームをセッションに
             $_SESSION['nickname'] = $array[3];
             
-            $_SESSION['1'] = $array[0];
-            $_SESSION['2'] = $array[1];
-            $_SESSION['3'] = $array[2];
-            $_SESSION['4'] = $array[3];
-            $_SESSION['5'] = $array[4];
-            $_SESSION['6'] = $array[5];
-            
-            
             //ログイン回数カウント
             $cnt = $array[4];
             $cnt = $cnt + 1;
-            $_SESSION['logincnt'] = $cnt;
-            
-            //セッションにユーザ名を保存
-            $_SESSION['username'] = $name;
             
             //ログイン回数をアップデート文で更新
             $update = sprintf("UPDATE userInfo SET loginCnt=%d where username='%s'",$cnt,$name);
