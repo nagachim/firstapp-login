@@ -20,8 +20,6 @@ if (!isset($_SESSION['nickname'])) {
     <body>
         <h1>メイン画面</h1>
         <p>ようこそ<u><?php echo htmlspecialchars($_SESSION['nickname'], ENT_QUOTES); ?></u>さん</p>
-        <p><u><?php echo htmlspecialchars($_SESSION['logincnt'], ENT_QUOTES); ?></u></p>
-        <p><u><?php echo htmlspecialchars($_SESSION['username'], ENT_QUOTES); ?></u></p>
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
         </ul>
