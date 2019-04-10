@@ -8,7 +8,7 @@ if (!isset($_SESSION['nickname'])) {
     exit;
 }
 $str = $_SESSION['nickname'];
-
+$str = mb_convert_encoding($str,"utf-8","sjis");
 ?>
 
 <!DOCTYPE html>
@@ -21,7 +21,7 @@ $str = $_SESSION['nickname'];
     </head>
     <body>
         <h1>メイン画面</h1>
-        <p>ようこそ<u><?php echo htmlspecialchars($str, ENT_QUOTES,UTF-8); ?></u>さん</p>
+        <p>ようこそ<u><?php echo htmlspecialchars($str, ENT_QUOTES,sjis); ?></u>さん</p>
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
         </ul>
