@@ -20,6 +20,12 @@ if (!isset($_SESSION['username'])) {
     <body>
         <h1>メイン画面</h1>
         <p>ようこそ<u><?php echo htmlspecialchars($_SESSION['nickname'], ENT_QUOTES); ?></u>さん</p>
+        <p><u><?php echo htmlspecialchars($_SESSION['0'], ENT_QUOTES); ?></u></p>
+        <p><u><?php echo htmlspecialchars($_SESSION['1'], ENT_QUOTES); ?></u></p>
+        <p><u><?php echo htmlspecialchars($_SESSION['2'], ENT_QUOTES); ?></u></p>
+        <p><u><?php echo htmlspecialchars($_SESSION['3'], ENT_QUOTES); ?></u></p>
+        <p><u><?php echo htmlspecialchars($_SESSION['4'], ENT_QUOTES); ?></u></p>
+        <p><u><?php echo htmlspecialchars($_SESSION['5'], ENT_QUOTES); ?></u></p>
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
         </ul>

@@ -50,6 +50,14 @@ if (isset($_POST['login'])) {
             //ログイン成功時に表示するニックネームをセッションに
             $_SESSION['nickname'] = $array[3];
             
+            $_SESSION['1'] = $array[0];
+            $_SESSION['2'] = $array[1];
+            $_SESSION['3'] = $array[2];
+            $_SESSION['4'] = $array[3];
+            $_SESSION['5'] = $array[4];
+            $_SESSION['6'] = $array[5];
+            
+            
             //ログイン回数カウント
             $cnt = $array[4];
             $cnt = $cnt + 1;
