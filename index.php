@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-header('Content-Type: text/html; charset=UTF-8');
+header('Content-Type: text/html; charset=shift=JIS');
 
 $dbUrl = parse_url(getenv('DATABASE_URL'));
 
@@ -51,9 +51,7 @@ if (isset($_POST['login'])) {
             
             
             //ログイン成功時に表示するニックネームをセッションに
-            $nickname = $array[3];
-            $nickname = mb_convert_encoding($nickname,"EUC-JP");
-            $_SESSION['nickname'] = $nickname;
+            $_SESSION['nickname'] = $array[3];
             
             //ログイン回数カウント
             $cnt = $array[4];
@@ -116,7 +114,7 @@ if (isset($_POST['login'])) {
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="utf-8">
+        <meta charset="shift-JIS">
         <title>ログイン画面</title>
         <link rel= "stylesheet" href="style.css">
         <script src="script.js"></script>
