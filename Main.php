@@ -19,7 +19,7 @@ if (!isset($_SESSION['nickname'])) {
     </head>
     <body>
         <h1>メイン画面</h1>
-        <p>ようこそ<u><?php echo htmlspecialchars($_SESSION['nickname'], ENT_QUOTES,'Shift-JIS'); ?></u>さん</p>
+        <p>ようこそ<u><?php echo htmlspecialchars($_SESSION['nickname'], ENT_QUOTES,'UTF-8'); ?></u>さん</p>
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
         </ul>
