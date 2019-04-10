@@ -1,6 +1,6 @@
 <?php
 session_start();
-header('Content-Type: text/html; charset=UTF-8');
+header('Content-Type: text/html; charset=shift_JIS');
 
 // ログイン状態チェック
 if (!isset($_SESSION['nickname'])) {
@@ -13,14 +13,14 @@ if (!isset($_SESSION['nickname'])) {
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="shift_JIS">
         <title>メイン</title>
         <link rel= "stylesheet" href="font.css">
         <script src="script.js"></script>
     </head>
     <body>
         <h1>メイン画面</h1>
-        <p>ようこそ<u><?php echo htmlspecialchars($_SESSION['nickname'], ENT_QUOTES); ?></u>さん</p>
+        <p>ようこそ<u><?php echo htmlspecialchars($_SESSION['nickname'], ENT_QUOTES,UTF-8); ?></u>さん</p>
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
         </ul>
