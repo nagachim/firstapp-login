@@ -8,9 +8,6 @@ if (!isset($_SESSION['nickname'])) {
     exit;
 }
 
-$text = $_SESSION['nickname'];
-$text = mb_convert_encoding($text, 'Shift-JIS', 'UTF-8');
-
 ?>
 
 <!DOCTYPE html>
@@ -23,7 +20,7 @@ $text = mb_convert_encoding($text, 'Shift-JIS', 'UTF-8');
     </head>
     <body>
         <h1>メイン画面</h1>
-        <p>ようこそ<u><?php echo htmlspecialchars($text, ENT_QUOTES,'Shift-JIS'); ?></u>さん</p>
+        <p>ようこそ<u><?php echo htmlspecialchars(mb_convert_encoding($_SESSION['nickname'], 'Shift-JIS', 'UTF-8'), ENT_QUOTES,'Shift-JIS'); ?></u>さん</p>
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
         </ul>
