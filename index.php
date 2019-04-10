@@ -51,9 +51,9 @@ if (isset($_POST['login'])) {
             $_SESSION['nickname'] = $array[3];
             
             //ログイン回数カウント
-            $cnt = $array[4];
-            $cnt = $cnt + 1;
-            $_SESSION['logincnt'] = $cnt;
+            //$cnt = $array[4];
+            //$cnt = $cnt + 1;
+            //$_SESSION['logincnt'] = $cnt;
             
             //セッションにユーザ名を保存
             $_SESSION['username'] = $name;
