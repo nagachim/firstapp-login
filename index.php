@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-header('Content-Type: text/html; charset=shift=JIS');
+header('Content-Type: text/html; charset=shift-JIS');
 
 $dbUrl = parse_url(getenv('DATABASE_URL'));
 
