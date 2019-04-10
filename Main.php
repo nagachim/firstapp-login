@@ -3,7 +3,7 @@ session_start();
 header('Content-Type: text/html; charset=shift_JIS');
 
 // ログイン状態チェック
-if (!isset($_SESSION['nickname'])) {
+if (!isset($_SESSION['username'])) {
     header("Location: logout.php");
     exit;
 }
