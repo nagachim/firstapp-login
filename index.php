@@ -39,14 +39,16 @@ if (isset($_POST['login'])) {
         }
 
         $select = sprintf("SELECT * FROM userInfo WHERE username='%s' and password='%s'",$name,$pass);
-        $sqlresult = pg_query($select);
+        $selectresult = pg_query($select);
+        $array = pg_fetch_array($selectresult,0,PGSQL_NUM);
         
-        if(!$sqlresult){
+        
+        if(!$name = $array[1]){
             $errorMessage = '入力されたユーザ又はパスワードは存在しません';
         }else
         {
             //pg_fetch_array(select文の結果をresultに入れたものを配列に)
-            $array = pg_fetch_array($result,0,PGSQL_NUM);
+            
             
             //ログイン成功時に表示するニックネームをセッションに
             $_SESSION['nickname'] = $array[3];
