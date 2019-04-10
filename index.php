@@ -41,11 +41,24 @@ if (isset($_POST['login'])) {
         $sqlresult = pg_query($select);
         
         if(!$sqlresult){
-            $loginerror = '入力されたユーザ又はパスワードは存在しません';
+            $errorMessage = '入力されたユーザ又はパスワードは存在しません';
         }else
         {
+            //pg_fetch_array(select文の結果をresultに入れたものを配列に)
+            $array = pg_fetch_array($result,0,PGSQL_NUM);
+            
+            //ログイン成功時に表示するニックネームをセッションに
+            $_SESSION['nickname'] = $array[3];
+            
+            //ログイン回数カウント
+            $cnt = $array[4];
+            $cnt = $cnt + 1;
+            $_SESSION['logincnt'] = $cnt;
+            
+            //セッションにユーザ名を保存
             $_SESSION['username'] = $name;
-            header("Location: Main.php"); 
+            $update = sprintf("UPDATE userInfo SET loginCnt=%d where username='%s'",$cnt,$name);
+            header("Location: Main.php");
         }
 
         // 2. ユーザとパスワードが入力されていたら認証する

@@ -20,49 +20,6 @@ if (!isset($_SESSION['username'])) {
     <body>
         <h1>ƒƒCƒ“‰æ–Ê</h1>
         <p>‚æ‚¤‚±‚»<u><?php echo htmlspecialchars($_SESSION['username'], ENT_QUOTES); ?></u>‚³‚ñ</p>
-        <pre>
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áá</span>”T”T”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááááá</span>”T”T”T”T”T”T<span class="font">áááááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááááá</span>”T”T”T”T”T”T<span class="font">áááááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T<span class="font">áá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááááááááááááááááááá</span>”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááááá</span>”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááááá</span>”T”T”T”T”T
-        ”T”T”T”T”T”T<span class="font">ááááááááááááááááááááááááááááááááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T
-        ”T”T”T”T”T<span class="font">ááááááááááááááááááááááááááááááááááááá</span>”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T<span class="font">áá</span>”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T<span class="font">ááá</span>”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááááááááááááááááááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">á</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T<span class="font">ááááááááááááááááááááááááááááááááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T<span class="font">ááááááááááááááááááááááááááááááááááááá</span>”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááááááááááááááááááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">á</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááááááááááááááááááááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááááá</span>”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T<span class="font">ááááááááááá</span>”T”T”T”T”T”T
-        ”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááááááá</span>”T”T”T”T”T”T
-        ”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áááááá</span>”T”T”T”T”T”T”T
-        ”T”T”T”T<span class="font">áá</span>”T”T”T”T”T”T”T”T”T<span class="font">ááááááááááááááááááá</span>”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááááá</span>”T”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">ááá</span>”T”T”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T<span class="font">áá</span>”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
-        ”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T”T
-
-
-        </pre>
         <ul>
             <li><a href="logout.php">ƒƒOƒAƒEƒg</a></li>
         </ul>
