@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-header('Content-Type: text/html; charset=shift-JIS');
+header('Content-Type: text/html; charset=shift_JIS');
 
 $dbUrl = parse_url(getenv('DATABASE_URL'));
 
@@ -114,7 +114,7 @@ if (isset($_POST['login'])) {
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="shift-JIS">
+        <meta charset="shift_JIS">
         <title>ログイン画面</title>
         <link rel= "stylesheet" href="style.css">
         <script src="script.js"></script>
