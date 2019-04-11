@@ -132,6 +132,14 @@ if (isset($_POST['login'])) {
                 <input type="submit" id="login" name="login" value="ログイン">
                 <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
             </fieldset>
+        </form>
+        <br>
+        <form action="SignUp.php">
+            <fieldset>          
+                <legend>新規登録フォーム</legend>
+                <input type="submit" value="新規登録">
+            </fieldset>
+        </form>
     </body>
 </html>
 
