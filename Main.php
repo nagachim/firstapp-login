@@ -3,12 +3,12 @@ session_start();
 header('Content-Type: text/html; charset=shift_JIS');
 
 // ログイン状態チェック
-if (!isset($_SESSION['nickname'])) {
+if (!isset($_SESSION['username'])) {
     header("Location: logout.php");
     exit;
 }
-$str = $_SESSION['nickname'];
-$str = mb_convert_encoding($str,"utf-8","sjis");
+$str = $_SESSION['username'];
+//$str = mb_convert_encoding($str,"utf-8","sjis");
 ?>
 
 <!DOCTYPE html>
