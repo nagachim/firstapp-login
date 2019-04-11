@@ -8,7 +8,7 @@ if (!isset($_SESSION['nickname'])) {
     exit;
 }
 $str = $_SESSION['nickname'];
-//$str = mb_convert_encoding($str,"utf-8","sjis");
+$str = mb_convert_encoding($str,"utf-8","sjis");
 ?>
 
 <!DOCTYPE html>
