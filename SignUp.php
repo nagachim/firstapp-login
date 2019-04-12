@@ -51,13 +51,6 @@ if (isset($_POST["signUp"])) {
             $insert =sprintf("INSERT INTO userinfo( username, password, nickname, logincnt, systimestamp) VALUES ( '%s', '%s', '%s', 0, current_timestamp",$name,$pass,$nickname);
             $insertresult = pg_query($insert);
         }
-        
-        
-        } catch (PDOException $e) {
-            $errorMessage = 'データベースエラー';
-            // $e->getMessage() でエラー内容を参照可能（デバッグ時のみ表示）
-            // echo $e->getMessage();
-        }
     } else if($_POST["password"] != $_POST["password2"]) {
         $errorMessage = 'パスワードに誤りがあります。';
     }
