@@ -2,6 +2,8 @@
 // セッション開始
 session_start();
 
+header('Content-Type: text/html; charset=UTF-8');
+
 $dbUrl = parse_url(getenv('DATABASE_URL'));
 
 $db['host'] = $dbUrl['host'];  // DBサーバのURL
@@ -13,35 +15,44 @@ $db['dbname'] = ltrim($dbUrl['path'], '/');;  // データベース名
 $errorMessage = "";
 $signUpMessage = "";
 
-// ログインボタンが押された場合
+// 新規登録ボタンが押された場合
 if (isset($_POST["signUp"])) {
     // 1. ユーザIDの入力チェック
-    if (empty($_POST["username"])) {  // 値が空のとき
+    if (empty($_POST['username'])) {  // 値が空のとき
         $errorMessage = 'ユーザーIDが未入力です。';
-    } else if (empty($_POST["password"])) {
+    } else if (empty($_POST['password'])) {
         $errorMessage = 'パスワードが未入力です。';
-    } else if (empty($_POST["password2"])) {
+    } else if (empty($_POST['password2'])) {
         $errorMessage = 'パスワードが未入力です。';
+    } else if (empty($_POST['nickname'])){
+        $errorMessage = 'ニックネームが未入力です';
     }
 
-    if (!empty($_POST["username"]) && !empty($_POST["password"]) && !empty($_POST["password2"]) && $_POST["password"] === $_POST["password2"]) {
+    if (!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['password2']) && $_POST['password'] === $_POST['password2']) {
         // 入力したユーザIDとパスワードを格納
-        $username = $_POST["username"];
-        $password = $_POST["password"];
+        $name = $_POST['username'];
+        $pass = $_POST['password'];
+        $nickname = $_POST['nickname'];
 
-        // 2. ユーザIDとパスワードが入力されていたら認証する
-        $dsn = sprintf('pgsql: host=%s; dbname=%s;', $db['host'], $db['dbname']);
-
-        // 3. エラー処理
-        try {
-            $pdo = new PDO($dsn, $db['user'], $db['pass'], array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-
-            $stmt = $pdo->prepare("INSERT INTO userinfo(username, password) VALUES (?, ?)");
-
-            $stmt->execute(array($username, password_hash($password, PASSWORD_DEFAULT)));  // パスワードのハッシュ化を行う（今回は文字列のみなのでbindValue(変数の内容が変わらない)を使用せず、直接excuteに渡しても問題ない）
-            $userid = $pdo->lastinsertid();  // 登録した(DB側でauto_incrementした)IDを$useridに入れる
-
-            $signUpMessage = '登録が完了しました。あなたのユーザ名は '. $username. ' です。パスワードは '. $password. ' です。';  // ログイン時に使用するIDとパスワード
+        //DB接続情報作成
+        $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
+        //DB接続
+        if(!$result = pg_connect($connectString)){
+            //接続失敗
+            $errorMessage = '予期せぬエラーが発生';
+            exit();
+        }
+        
+        $select = sprintf("SELECT * FROM userInfo WHERE username='%s'",$name);
+        $selectresult = pg_query($select);
+        if(!$selectresult){
+            
+        }else{
+            $insert =sprintf("INSERT INTO userinfo( username, password, nickname, logincnt, systimestamp) VALUES ( '%s', '%s', '%s', 0, current_timestamp",$name,$pass,$nickname);
+            $insertresult = pg_query($insert);
+        }
+        
+        
         } catch (PDOException $e) {
             $errorMessage = 'データベースエラー';
             // $e->getMessage() でエラー内容を参照可能（デバッグ時のみ表示）

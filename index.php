@@ -13,7 +13,6 @@ $db['dbname'] = ltrim($dbUrl['path'], '/');;  // データベース名
 
 //エラーメッセージの初期化
 $errorMessage = "";
-$loginerror = "";
 
 // ログインボタンが押された場合
 if (isset($_POST['login'])) {
