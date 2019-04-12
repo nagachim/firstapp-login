@@ -2,7 +2,7 @@
 // セッション開始
 session_start();
 
-header('Content-Type: text/html; charset=UTF-8');
+header('Content-Type: text/html; charset=shift_JIS');
 
 $dbUrl = parse_url(getenv('DATABASE_URL'));
 
@@ -60,7 +60,7 @@ if (isset($_POST["signUp"])) {
 <!doctype html>
 <html>
     <head>
-            <meta charset="UTF-8">
+            <meta charset="shift_JIS">
             <title>新規登録</title>
     </head>
     <body>
