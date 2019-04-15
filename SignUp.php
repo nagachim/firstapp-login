@@ -49,7 +49,7 @@ if (isset($_POST["signUp"])) {
 
         //DB検索結果で入力した名前が存在した場合
         //新たに登録できないようにエラーメッセージではじく
-        if($name = $array[0]){
+        if($name == $array[0]){
             $errorMessage='既に使用されているユーザ名です';  
         }else{
             //ユーザ情報登録処理
@@ -63,7 +63,7 @@ if (isset($_POST["signUp"])) {
             header("Location: RegSuccess.php");
         }
     } else if($_POST["password"] != $_POST["password2"]) {
-        $errorMessage = 'パスワードに誤りがあります。';
+        $errorMessage = 'パスワードが確認用と一致しません。';
     }
 }
 ?>
@@ -81,7 +81,7 @@ if (isset($_POST["signUp"])) {
                 <legend>新規登録者フォーム</legend>
                 <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
                 <div><font color="#0000ff"><?php echo htmlspecialchars($signUpMessage, ENT_QUOTES); ?></font></div>
-                <label for="username">ユーザー名　　　　　　：</label><input type="text" id="username" name="username" placeholder="ユーザー名を入力" value="<?php if (!empty($_POST['username'])) {echo htmlspecialchars($_POST['username'], ENT_QUOTES);} ?>">
+                <label for="username">ユーザー名　　　　　　：</label><input type="text" id="username" name="username" placeholder="ユーザー名を入力" value="">
                 <br>
                 <label for="password">パスワード　　　　　　：</label><input type="password" id="password" name="password" value="" placeholder="パスワードを入力">
                 <br>
