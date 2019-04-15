@@ -1,45 +1,45 @@
 <?php
-// ƒZƒbƒVƒ‡ƒ“ŠJŽn
+// ã‚»ãƒƒã‚·ãƒ§ãƒ³é–‹å§‹
 session_start();
 
 header('Content-Type: text/html; charset=utf-8');
 
 $dbUrl = parse_url(getenv('DATABASE_URL'));
 
-$db['host'] = $dbUrl['host'];  // DBƒT[ƒo‚ÌURL
-$db['user'] = $dbUrl['user'];  // ƒ†[ƒU[–¼
-$db['pass'] = $dbUrl['pass'];  // ƒ†[ƒU[–¼‚ÌƒpƒXƒ[ƒh
-$db['dbname'] = ltrim($dbUrl['path'], '/');;  // ƒf[ƒ^ƒx[ƒX–¼
+$db['host'] = $dbUrl['host'];  // DBã‚µãƒ¼ãƒã®URL
+$db['user'] = $dbUrl['user'];  // ãƒ¦ãƒ¼ã‚¶ãƒ¼å
+$db['pass'] = $dbUrl['pass'];  // ãƒ¦ãƒ¼ã‚¶ãƒ¼åã®ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
+$db['dbname'] = ltrim($dbUrl['path'], '/');;  // ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹å
 
-// ƒGƒ‰[ƒƒbƒZ[ƒWA“o˜^Š®—¹ƒƒbƒZ[ƒW‚Ì‰Šú‰»
+// ã‚¨ãƒ©ãƒ¼ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã€ç™»éŒ²å®Œäº†ãƒ¡ãƒƒã‚»ãƒ¼ã‚¸ã®åˆæœŸåŒ–
 $errorMessage = "";
 $signUpMessage = "";
 
-// V‹K“o˜^ƒ{ƒ^ƒ“‚ª‰Ÿ‚³‚ê‚½ê‡
+// æ–°è¦ç™»éŒ²ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸå ´åˆ
 if (isset($_POST["signUp"])) {
-    // 1. ƒ†[ƒUID‚Ì“ü—Íƒ`ƒFƒbƒN
-    if (empty($_POST['username'])) {  // ’l‚ª‹ó‚Ì‚Æ‚«
-        $errorMessage = 'ƒ†[ƒU[ID‚ª–¢“ü—Í‚Å‚·B';
+    // 1. ãƒ¦ãƒ¼ã‚¶IDã®å…¥åŠ›ãƒã‚§ãƒƒã‚¯
+    if (empty($_POST['username'])) {  // å€¤ãŒç©ºã®ã¨ã
+        $errorMessage = 'ãƒ¦ãƒ¼ã‚¶ãƒ¼IDãŒæœªå…¥åŠ›ã§ã™ã€‚';
     } else if (empty($_POST['password'])) {
-        $errorMessage = 'ƒpƒXƒ[ƒh‚ª–¢“ü—Í‚Å‚·B';
+        $errorMessage = 'ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒæœªå…¥åŠ›ã§ã™ã€‚';
     } else if (empty($_POST['password2'])) {
-        $errorMessage = 'ƒpƒXƒ[ƒh‚ª–¢“ü—Í‚Å‚·B';
+        $errorMessage = 'ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ãŒæœªå…¥åŠ›ã§ã™ã€‚';
     } else if (empty($_POST['nickname'])){
-        $errorMessage = 'ƒjƒbƒNƒl[ƒ€‚ª–¢“ü—Í‚Å‚·';
+        $errorMessage = 'ãƒ‹ãƒƒã‚¯ãƒãƒ¼ãƒ ãŒæœªå…¥åŠ›ã§ã™';
     }
 
     if (!empty($_POST['username']) && !empty($_POST['password']) && !empty($_POST['password2']) && $_POST['password'] === $_POST['password2']) {
-        // “ü—Í‚µ‚½ƒ†[ƒUID‚ÆƒpƒXƒ[ƒh‚ðŠi”[
+        // å…¥åŠ›ã—ãŸãƒ¦ãƒ¼ã‚¶IDã¨ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’æ ¼ç´
         $name = $_POST['username'];
         $pass = $_POST['password'];
         $nickname = $_POST['nickname'];
 
-        //DBÚ‘±î•ñì¬
+        //DBæŽ¥ç¶šæƒ…å ±ä½œæˆ
         $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
-        //DBÚ‘±
+        //DBæŽ¥ç¶š
         if(!$result = pg_connect($connectString)){
-            //Ú‘±Ž¸”s
-            $errorMessage = '—\Šú‚¹‚ÊƒGƒ‰[‚ª”­¶';
+            //æŽ¥ç¶šå¤±æ•—
+            $errorMessage = 'äºˆæœŸã›ã¬ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿ';
             exit();
         }
         
@@ -56,7 +56,7 @@ if (isset($_POST["signUp"])) {
             
         }
     } else if($_POST["password"] != $_POST["password2"]) {
-        $errorMessage = 'ƒpƒXƒ[ƒh‚ÉŒë‚è‚ª‚ ‚è‚Ü‚·B';
+        $errorMessage = 'ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã«èª¤ã‚ŠãŒã‚ã‚Šã¾ã™ã€‚';
     }
 }
 ?>
@@ -65,29 +65,29 @@ if (isset($_POST["signUp"])) {
 <html>
     <head>
             <meta charset="utf-8">
-            <title>V‹K“o˜^</title>
+            <title>æ–°è¦ç™»éŒ²</title>
     </head>
     <body>
-        <h1>V‹K“o˜^‰æ–Ê</h1>
+        <h1>æ–°è¦ç™»éŒ²ç”»é¢</h1>
         <form id="loginForm" name="loginForm" action="" method="POST">
             <fieldset>
-                <legend>V‹K“o˜^ŽÒƒtƒH[ƒ€</legend>
+                <legend>æ–°è¦ç™»éŒ²è€…ãƒ•ã‚©ãƒ¼ãƒ </legend>
                 <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
                 <div><font color="#0000ff"><?php echo htmlspecialchars($signUpMessage, ENT_QUOTES); ?></font></div>
-                <label for="username">ƒ†[ƒU[–¼@@@@@@F</label><input type="text" id="username" name="username" placeholder="ƒ†[ƒU[–¼‚ð“ü—Í" value="<?php if (!empty($_POST['username'])) {echo htmlspecialchars($_POST['username'], ENT_QUOTES);} ?>">
+                <label for="username">ãƒ¦ãƒ¼ã‚¶ãƒ¼åã€€ã€€ã€€ã€€ã€€ã€€ï¼š</label><input type="text" id="username" name="username" placeholder="ãƒ¦ãƒ¼ã‚¶ãƒ¼åã‚’å…¥åŠ›" value="<?php if (!empty($_POST['username'])) {echo htmlspecialchars($_POST['username'], ENT_QUOTES);} ?>">
                 <br>
-                <label for="password">ƒpƒXƒ[ƒh@@@@@@F</label><input type="password" id="password" name="password" value="" placeholder="ƒpƒXƒ[ƒh‚ð“ü—Í">
+                <label for="password">ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã€€ã€€ã€€ã€€ã€€ã€€ï¼š</label><input type="password" id="password" name="password" value="" placeholder="ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å…¥åŠ›">
                 <br>
-                <label for="password2">ƒpƒXƒ[ƒhiŠm”F—pj@F</label><input type="password" id="password2" name="password2" value="" placeholder="Ä“xƒpƒXƒ[ƒh‚ð“ü—Í">
+                <label for="password2">ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ï¼ˆç¢ºèªç”¨ï¼‰ã€€ï¼š</label><input type="password" id="password2" name="password2" value="" placeholder="å†åº¦ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã‚’å…¥åŠ›">
                 <br>
-                <label for="nickname">ƒjƒbƒNƒl[ƒ€@@@@@F</label><input type="text" id="nickname" name="nickname" value="" placeholder="ƒjƒbƒNƒl[ƒ€‚ð“ü—Í">
+                <label for="nickname">ãƒ‹ãƒƒã‚¯ãƒãƒ¼ãƒ ã€€ã€€ã€€ã€€ã€€ï¼š</label><input type="text" id="nickname" name="nickname" value="" placeholder="ãƒ‹ãƒƒã‚¯ãƒãƒ¼ãƒ ã‚’å…¥åŠ›">
                 <br>
-                <input type="submit" id="signUp" name="signUp" value="“o˜^">
+                <input type="submit" id="signUp" name="signUp" value="ç™»éŒ²">
             </fieldset>
         </form>
         <br>
-        <form action="Login.php">
-            <input type="submit" value="–ß‚é">
+        <form action="index.php">
+            <input type="submit" value="æˆ»ã‚‹">
         </form>
     </body>
 </html>
