@@ -39,21 +39,18 @@ if (isset($_POST["signUp"])) {
         //DB接続
         if(!$result = pg_connect($connectString)){
             //接続失敗
-            $errorMessage = '予期せぬエラーが発生';
+            $errorMessage = '予期せぬエラーが発生（管理者問い合わせ）';
             exit();
         }
         
         $select = sprintf("SELECT * FROM userInfo WHERE username='%s'",$name);
         $selectresult = pg_query($select);
         if(!$selectresult){
-            
+            $errorMessage='既に使用されているユーザ名です';
         }else{
-            $insert =sprintf("INSERT INTO userInfo( username, password, nickname, logincnt, systimestamp) VALUES ( '%s', '%s', '%s', 0, current_timestamp)",$name,$pass,$nickname);
-            
+            $insert = sprintf("INSERT INTO userInfo( username, password, nickname, logincnt, systimestamp) VALUES ( '%s', '%s', '%s', 0, current_timestamp)",$name,$pass,$nickname);
             $insertresult = pg_query($insert);
-            $errorMessage = $name;
-            $signUpMessage = $pass;
-            
+            header("Location: RegSuccess.php");
         }
     } else if($_POST["password"] != $_POST["password2"]) {
         $errorMessage = 'パスワードに誤りがあります。';

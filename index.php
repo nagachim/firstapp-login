@@ -65,48 +65,6 @@ if (isset($_POST['login'])) {
             }
             header("Location: Main.php");
         }
-
-        // 2. ユーザとパスワードが入力されていたら認証する
-//        $dsn = sprintf('pgsql: host=%s; dbname=%s;', $db['host'], $db['dbname']);
-//
-//        // 3. エラー処理
-//        try {
-//            $pdo = new PDO($dsn, $db['user'], $db['pass'], array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-//
-//            $stmt = $pdo->prepare('SELECT * FROM userInfo WHERE username = ? and password = ?');
-//            $stmt->execute(array($username,$password));
-//
-//
-//            if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-//                if (password_verify($password, $row['password'])) {
-//                    session_regenerate_id(true);
-//
-//                    // 入力したユーザー名を取得
-//                    $username = $row['username'];
-//                    $password = $row['password'];
-//                    $sql = "SELECT * FROM userInfo WHERE username = $username and password = $password";
-//                    $stmt = $pdo->query($sql);
-//                    foreach ($stmt as $row) {
-//                        $row['username'];  // ユーザー名
-//                    }
-//                    $_SESSION['username'] = $row['username'];
-//                    header("Location: Main.php");  // メイン画面へ遷移
-//                    exit();  // 処理終了
-//                } else {
-//                    // 認証失敗
-//                    $errorMessage = 'ユーザ名あるいはパスワードに誤りがあります。';
-//                }
-//            } else {
-//                // 4. 認証成功なら、セッションIDを新規に発行する
-//                // 該当データなし
-//                $errorMessage = 'ユーザ名あるいはパスワードに誤りがあります。';
-//            }
-//        } catch (PDOException $e) {
-//            $errorMessage = 'データベースエラー';
-//            //$errorMessage = $sql;
-//            // $e->getMessage() でエラー内容を参照可能（デバッグ時のみ表示）
-//            // echo $e->getMessage();
-//        }
     }
 }
 ?>
