@@ -35,7 +35,7 @@ if (isset($_POST["signUp"])) {
         $nickname = $_POST['nickname'];
 
         //DBÚ‘±î•ñì¬
-        $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
+        $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} Encoding=UTF8 password={$db['pass']}";
         //DBÚ‘±
         if(!$result = pg_connect($connectString)){
             //Ú‘±¸”s
