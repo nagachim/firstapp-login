@@ -48,7 +48,7 @@ if (isset($_POST["signUp"])) {
         if(!$selectresult){
             
         }else{
-            $insert =sprintf("INSERT INTO userinfo( username, password, nickname, logincnt, systimestamp) VALUES ( '%s', '%s', '%s', 0, current_timestamp)",$name,$pass,$nickname);
+            $insert =sprintf("INSERT INTO userInfo( username, password, nickname, logincnt, systimestamp) VALUES ( '%s', '%s', '%s', 0, current_timestamp)",$name,$pass,$nickname);
             $insertresult = pg_query($insert);
         }
     } else if($_POST["password"] != $_POST["password2"]) {
