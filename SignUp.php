@@ -69,7 +69,7 @@ if (isset($_POST["signUp"])) {
     </head>
     <body>
         <h1>新規登録画面</h1>
-        <form id="loginForm" name="loginForm" action="" method="POST">
+        <form id="SignUpForm" name="SignUpForm" action="" method="POST">
             <fieldset>
                 <legend>新規登録者フォーム</legend>
                 <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
