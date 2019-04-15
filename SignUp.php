@@ -14,6 +14,9 @@ $db['dbname'] = ltrim($dbUrl['path'], '/');;  // データベース名
 // エラーメッセージ、登録完了メッセージの初期化
 $errorMessage = "";
 $signUpMessage = "";
+$name = "";
+$pass = "";
+$nickname = "";
 
 // 新規登録ボタンが押された場合
 if (isset($_POST["signUp"])) {
