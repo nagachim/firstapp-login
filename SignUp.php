@@ -52,7 +52,7 @@ if (isset($_POST["signUp"])) {
             
             $insertresult = pg_query($insert);
             $errorMessage = $name;
-            $signUpMessage = $ pass;
+            $signUpMessage = $pass;
             
         }
     } else if($_POST["password"] != $_POST["password2"]) {
