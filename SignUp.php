@@ -48,11 +48,11 @@ if (isset($_POST["signUp"])) {
         if(!$selectresult){
             
         }else{
-            //$insert =sprintf("INSERT INTO userInfo( username, password, nickname, logincnt, systimestamp) VALUES ( '%s', '%s', '%s', 0, current_timestamp)",$name,$pass,$nickname);
-            
-            $insert = "insert into userInfo(username,password,nickname,logincnt,systimestamp)value('nanashix','nnsx007','ÇΩÅ[ÇæÅ[',0,current_timestamp);";
+            $insert =sprintf("INSERT INTO userInfo( username, password, nickname, logincnt, systimestamp) VALUES ( '%s', '%s', '%s', 0, current_timestamp)",$name,$pass,$nickname);
             
             $insertresult = pg_query($insert);
+            $errorMessage = $name;
+            $signUpMessage = $ pass;
             
         }
     } else if($_POST["password"] != $_POST["password2"]) {
