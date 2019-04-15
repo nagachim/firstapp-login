@@ -43,7 +43,7 @@ if (isset($_POST["signUp"])) {
             exit();
         }
         
-        $select = sprintf("SELECT * FROM userInfo WHERE username='%s'",$name);
+        $select = sprintf("SELECT username FROM userInfo WHERE username='%s'",$name);
         $selectresult = pg_query($select);
         $array = pg_fetch_array($selectresult,0,PGSQL_NUM);
 
