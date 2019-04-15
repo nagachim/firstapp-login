@@ -2,7 +2,7 @@
 // セッション開始
 session_start();
 
-header('Content-Type: text/html; charset=shift_JIS');
+header('Content-Type: text/html; charset=utf-8');
 
 $dbUrl = parse_url(getenv('DATABASE_URL'));
 
@@ -35,7 +35,7 @@ if (isset($_POST["signUp"])) {
         $nickname = $_POST['nickname'];
 
         //DB接続情報作成
-        $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} Encoding=UTF8 password={$db['pass']}";
+        $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
         //DB接続
         if(!$result = pg_connect($connectString)){
             //接続失敗
