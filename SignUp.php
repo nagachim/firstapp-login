@@ -45,11 +45,21 @@ if (isset($_POST["signUp"])) {
         
         $select = sprintf("SELECT * FROM userInfo WHERE username='%s'",$name);
         $selectresult = pg_query($select);
-        if(!$selectresult){
-            $errorMessage='既に使用されているユーザ名です';
+        $array = pg_fetch_array($selectresult,0,PGSQL_NUM);
+
+        //DB検索結果で入力した名前が存在した場合
+        //新たに登録できないようにエラーメッセージではじく
+        if($name = $array[0]){
+            $errorMessage='既に使用されているユーザ名です';  
         }else{
+            //ユーザ情報登録処理
             $insert = sprintf("INSERT INTO userInfo( username, password, nickname, logincnt, systimestamp) VALUES ( '%s', '%s', '%s', 0, current_timestamp)",$name,$pass,$nickname);
             $insertresult = pg_query($insert);
+            if(!$insertresult){
+                $errorMessage = '予期せぬエラーが発生（ＩＮＳＥＲＴ）';
+            }
+            
+            //登録成功画面へ
             header("Location: RegSuccess.php");
         }
     } else if($_POST["password"] != $_POST["password2"]) {
