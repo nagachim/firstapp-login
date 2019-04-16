@@ -30,6 +30,6 @@ $str = $_SESSION['username'];
         <?php
         if($str == 'nagachim'){
             echo '<a href="secret.html">‚¨—V‚Ñ</a>'
-        }
+        }?>
     </body>
 </html>
