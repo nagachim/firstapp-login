@@ -83,6 +83,7 @@ if (isset($_POST['login'])) {
         <H1>ログイン画面</h1>
         <form id="loginForm" name="loginForm" action="" method="POST" accept-charset="UTF-8">
             <fieldset>
+                <legend>ログイン情報</legend>
                 <label for="username">ユーザ名　：</label><input type="text" id="username" name="username" placeholder="ユーザ名を入力" value="">
                 <br>
                 <label for="password">パスワード：</label><input type="password" id="password" name="password" value="" placeholder="パスワードを入力">
@@ -93,12 +94,7 @@ if (isset($_POST['login'])) {
             </fieldset>
         </form>
         <br>
-        <form action="SignUp.php">
-            <fieldset>          
-                <legend>新規登録フォーム</legend>
-                <input type="submit" value="新規登録">
-            </fieldset>
-        </form>
+        <a href="SignUp.php">新規登録はこちら</a>
     </body>
 </html>
 
