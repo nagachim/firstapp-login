@@ -27,9 +27,9 @@ $str = $_SESSION['username'];
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
         </ul>
-        <?php
+        <div><?php
         if($str == 'nagachim'){
-            echo '<a href="secret.html">お遊び</a>'
-        }?>
+            echo '<a href="secret.html">お遊び</a>';
+        }?></div>
     </body>
 </html>
