@@ -9,6 +9,8 @@ if (!isset($_SESSION['username'])) {
 }
 $str = $_SESSION['username'];
 //$str = mb_convert_encoding($str,"utf-8","sjis");
+
+
 ?>
 
 <!DOCTYPE html>
@@ -25,5 +27,9 @@ $str = $_SESSION['username'];
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
         </ul>
+        <?php
+        if($str == 'nagachim'){
+            echo '<a href="secret.html">お遊び</a>'
+        }
     </body>
 </html>

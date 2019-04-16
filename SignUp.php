@@ -62,12 +62,17 @@ if (isset($_POST["signUp"])) {
                 $errorMessage = '予期せぬエラーが発生（ＩＮＳＥＲＴ）';
             }
             
+            //DB切断
+            pg_close($result);
+            
             //登録成功画面へ
             header("Location: RegSuccess.php");
         }
     } else if($_POST["password"] != $_POST["password2"]) {
         $errorMessage = 'パスワードが確認用と一致しません。';
     }
+    //DB切断
+    pg_close($result);
 }
 ?>
 
