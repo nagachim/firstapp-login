@@ -44,7 +44,7 @@ $result = pg_query($select);
         <p>‚æ‚¤‚±‚»<u><?php echo htmlspecialchars($str, ENT_QUOTES,sjis); ?></u>‚³‚ñ</p>
         <div><?php
         if(!empty($result)){
-        echo '<p>‚æ‚¤‚±‚»salesforce <u><?php echo htmlspecialchars($result, ENT_QUOTES,sjis); ?></u>‚³‚ñ</p>';
+        echo '<p>‚æ‚¤‚±‚»salesforce <u><?php echo htmlspecialchars($result, ENT_QUOTES,utf-8); ?></u>‚³‚ñ</p>';
         }?></div>
         
         <ul>
