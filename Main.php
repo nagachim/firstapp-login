@@ -10,7 +10,7 @@ if (!isset($_SESSION['username'])) {
 $str = $_SESSION['username'];
 //$str = mb_convert_encoding($str,"utf-8","sjis");
 
-$dbUrl = puarse_url(getenv('DATABASE_URL'));
+$dbUrl = parse_url(getenv('DATABASE_URL'));
 $db['host'] = $dbUrl['host'];
 $db['user'] = $dbUrl['user'];
 $db['pass'] = $dbUrl['pass'];
