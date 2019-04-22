@@ -16,7 +16,7 @@ $db['user'] = $dbUrl['user'];
 $db['pass'] = $dbUrl['pass'];
 $db['dbname'] = 'salesforce';
 
-$select = sprintf("SELECT name FROM salesforce.user WHERE communitynickname = '%s' ",$str);
+$select = sprintf("SELECT name FROM salesforce.user WHERE communitynickname = '%s'; ",$str);
 $result = pg_query($select);
 $array = pg_fetch_array($result ,0 ,PGSQL_NUM);
 
