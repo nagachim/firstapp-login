@@ -54,6 +54,6 @@ $errorMessage = 'ƒeƒXƒg';
         if($str == 'nagachim'){
             echo '<a href="secret.html">‚¨—V‚Ñ</a>';
         }?></div>
-        <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
+        <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES.sjis); ?></font></div>
     </body>
 </html>
