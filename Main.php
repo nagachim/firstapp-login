@@ -28,7 +28,7 @@ if(!$result = pg_connect($connectString)){
 $select = sprintf("SELECT name FROM salesforce.user WHERE communitynickname = '%s'; ",$str);
 $result = pg_query($select);
 //$array = pg_fetch_array($result ,0 ,PGSQL_NUM);
-
+$errorMessage = $result;
 ?>
 
 <!DOCTYPE html>
@@ -54,5 +54,6 @@ $result = pg_query($select);
         if($str == 'nagachim'){
             echo '<a href="secret.html">‚¨—V‚Ñ</a>';
         }?></div>
+        <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES); ?></font></div>
     </body>
 </html>
