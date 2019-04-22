@@ -33,10 +33,11 @@ $array = pg_fetch_array($result ,0 ,PGSQL_NUM);
     <body>
         <h1>メイン画面</h1>
         <p>ようこそ<u><?php echo htmlspecialchars($str, ENT_QUOTES,sjis); ?></u>さん</p>
-        <?php
+        <div><?php
         if(!empty($array[0])){
         echo '<p>ようこそsalesforce <u><?php echo htmlspecialchars($array[0], ENT_QUOTES,sjis); ?></u>さん</p>';
-        }?>
+        }?></div>
+        
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
         </ul>
