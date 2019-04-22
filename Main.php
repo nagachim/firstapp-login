@@ -28,7 +28,7 @@ if(!$result = pg_connect($connectString)){
 $select = sprintf("SELECT name FROM salesforce.user WHERE communitynickname = '%s'; ",$str);
 $result = pg_query($select);
 //$array = pg_fetch_array($result ,0 ,PGSQL_NUM);
-$errorMessage = $result;
+$errorMessage = 'ƒeƒXƒg';
 ?>
 
 <!DOCTYPE html>
