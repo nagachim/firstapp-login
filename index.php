@@ -8,7 +8,7 @@ $dbUrl = parse_url(getenv('DATABASE_URL'));
 $db['host'] = $dbUrl['host'];  // DBサーバのURL
 $db['user'] = $dbUrl['user'];  // ユーザー名
 $db['pass'] = $dbUrl['pass'];  // ユーザー名のパスワード
-$db['dbname'] = ltrim($dbUrl['path'], '/');;  // データベース名
+$db['dbname'] = ltrim($dbUrl['path'], '/');  // データベース名
 
 
 //エラーメッセージの初期化

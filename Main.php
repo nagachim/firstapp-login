@@ -10,6 +10,15 @@ if (!isset($_SESSION['username'])) {
 $str = $_SESSION['username'];
 //$str = mb_convert_encoding($str,"utf-8","sjis");
 
+$dbUrl = puarse_url(getenv('DATABASE_URL'));
+$db['host'] = $dbUrl['host'];
+$db['user'] = $dbUrl['user'];
+$db['pass'] = $dbUrl['pass'];
+$db['dbname'] = 'salesforce';
+
+$select = sprintf("SELECT name FROM salesforce.user WHERE communitynickname = '%s' ",$str);
+$result = pg_query($select);
+$array = pg_fetch_array($result ,0 ,PGSQL_NUM);
 
 ?>
 
@@ -24,6 +33,10 @@ $str = $_SESSION['username'];
     <body>
         <h1>メイン画面</h1>
         <p>ようこそ<u><?php echo htmlspecialchars($str, ENT_QUOTES,sjis); ?></u>さん</p>
+        <?php
+        if(!empty($array[0])){
+        echo '<p>ようこそsalesforce <u><?php echo htmlspecialchars($array[0], ENT_QUOTES,sjis); ?></u>さん</p>';
+        }?>
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
         </ul>
