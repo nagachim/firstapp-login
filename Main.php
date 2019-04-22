@@ -14,7 +14,7 @@ $dbUrl = parse_url(getenv('DATABASE_URL'));
 $db['host'] = $dbUrl['host'];
 $db['user'] = $dbUrl['user'];
 $db['pass'] = $dbUrl['pass'];
-$db['dbname'] = 'salesforce';
+$db['dbname'] = ltrim($dbUrl['path'], '/');  // データベース名
 
 //DB接続情報作成
 $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
