@@ -16,6 +16,15 @@ $db['user'] = $dbUrl['user'];
 $db['pass'] = $dbUrl['pass'];
 $db['dbname'] = 'salesforce';
 
+//DBÚ‘±î•ñì¬
+$connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
+//DBÚ‘±
+if(!$result = pg_connect($connectString)){
+    //Ú‘±¸”s
+    $errorMessage = '—\Šú‚¹‚ÊƒGƒ‰[‚ª”­¶';
+    exit();
+}
+
 $select = sprintf("SELECT name FROM salesforce.user WHERE communitynickname = '%s'; ",$str);
 $result = pg_query($select);
 $array = pg_fetch_array($result ,0 ,PGSQL_NUM);
