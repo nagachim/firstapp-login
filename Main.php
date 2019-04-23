@@ -18,17 +18,19 @@ $db['dbname'] = ltrim($dbUrl['path'], '/');  // データベース名
 
 //DB接続情報作成
 $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
-//DB接続
-if(!$result = pg_connect($connectString)){
-    //接続失敗
-    $errorMessage = '予期せぬエラーが発生';
-    exit();
-}else{
-	//$select = sprintf("SELECT name FROM salesforce.user WHERE communitynickname = '%s'; ",$str);
+////DB接続
+//if(!$result = pg_connect($connectString)){
+//    //接続失敗
+//    $errorMessage = '予期せぬエラーが発生';
+//    exit();
+//}else{
+//	//$select = sprintf("SELECT name FROM salesforce.user WHERE communitynickname = '%s'; ",$str);
 	$select = "SELECT name FROM salesforce.user WHERE communitynickname = 'nagachimu';";
-	$seleresult = pg_query($select);
-	$array = pg_fetch_result($seleresult ,1 ,0);
-}
+	$result = pg_query($select,$connectString);
+	$array = pg_fetch_array($result, 0, PGSQL_ASSOC);
+	$name = $array['name'];
+//}
+
 ?>
 
 <!DOCTYPE html>
@@ -41,10 +43,10 @@ if(!$result = pg_connect($connectString)){
     </head>
     <body>
         <h1>メイン画面</h1>
-        <p>ようこそ<u><?php echo htmlspecialchars($seleresult, ENT_QUOTES,sjis); ?></u>さん</p>
+        <p>ようこそ<u><?php echo htmlspecialchars($result, ENT_QUOTES,sjis); ?></u>さん</p>
         <div><?php
         if(!empty($result)){
-        echo '<p>ようこそsalesforce <u><?php echo htmlspecialchars($array, ENT_QUOTES,sjis); ?></u>さん</p>';
+        echo '<p>ようこそsalesforce <u><?php echo htmlspecialchars($name, ENT_QUOTES,sjis); ?></u>さん</p>';
         }?></div>
         
         <ul>
