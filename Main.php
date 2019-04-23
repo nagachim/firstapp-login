@@ -27,8 +27,8 @@ if(!$result = pg_connect($connectString)){
 
 $select = sprintf("SELECT name FROM salesforce.user WHERE communitynickname = '%s'; ",$str);
 $result = pg_query($select);
-$array = pg_fetch_array($result ,0 ,PGSQL_NUM);
-$str = $array[0];
+$array = pg_fetch_result($result ,1 ,0);
+
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +44,7 @@ $str = $array[0];
         <p>‚æ‚¤‚±‚»<u><?php echo htmlspecialchars($str, ENT_QUOTES,sjis); ?></u>‚³‚ñ</p>
         <div><?php
         if(!empty($result)){
-        echo '<p>‚æ‚¤‚±‚»salesforce <u><?php echo htmlspecialchars($result, ENT_QUOTES,sjis); ?></u>‚³‚ñ</p>';
+        echo '<p>‚æ‚¤‚±‚»salesforce <u><?php echo htmlspecialchars($array, ENT_QUOTES,sjis); ?></u>‚³‚ñ</p>';
         }?></div>
         
         <ul>
