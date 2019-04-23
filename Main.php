@@ -27,8 +27,8 @@ if(!$result = pg_connect($connectString)){
 
 $select = sprintf("SELECT name FROM salesforce.user WHERE communitynickname = '%s'; ",$str);
 $result = pg_query($select);
-//$array = pg_fetch_array($result ,0 ,PGSQL_NUM);
-$errorMessage = 'テスト';
+$array = pg_fetch_array($result ,0 ,PGSQL_NUM);
+$str = $array[0];
 ?>
 
 <!DOCTYPE html>
@@ -41,10 +41,10 @@ $errorMessage = 'テスト';
     </head>
     <body>
         <h1>メイン画面</h1>
-        <p>ようこそ<u><?php echo htmlspecialchars($str, ENT_QUOTES); ?></u>さん</p>
+        <p>ようこそ<u><?php echo htmlspecialchars($str, ENT_QUOTES,sjis); ?></u>さん</p>
         <div><?php
         if(!empty($result)){
-        echo '<p>ようこそsalesforce <u><?php echo htmlspecialchars($result, ENT_QUOTES); ?></u>さん</p>';
+        echo '<p>ようこそsalesforce <u><?php echo htmlspecialchars($result, ENT_QUOTES,sjis); ?></u>さん</p>';
         }?></div>
         
         <ul>
@@ -54,6 +54,5 @@ $errorMessage = 'テスト';
         if($str == 'nagachim'){
             echo '<a href="secret.html">お遊び</a>';
         }?></div>
-        <div><font color="#ff0000"><?php echo htmlspecialchars($errorMessage, ENT_QUOTES.sjis); ?></font></div>
     </body>
 </html>
