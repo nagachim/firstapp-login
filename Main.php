@@ -23,13 +23,12 @@ if(!$result = pg_connect($connectString)){
     //Ú‘±Ž¸”s
     $errorMessage = '—\Šú‚¹‚ÊƒGƒ‰[‚ª”­¶';
     exit();
+}else{
+	//$select = sprintf("SELECT name FROM salesforce.user WHERE communitynickname = '%s'; ",$str);
+	$select = "SELECT name FROM salesforce.user WHERE communitynickname = 'nagachimu';";
+	$seleresult = pg_query($select);
+	$array = pg_fetch_result($seleresult ,1 ,0);
 }
-
-$select = sprintf("SELECT name FROM user WHERE communitynickname = '%s'; ",$str);
-$select = "SELECT name FROM user WHERE communitynickname = 'nagachimu';";
-$seleresult = pg_query($select);
-$array = pg_fetch_result($seleresult ,1 ,0);
-
 ?>
 
 <!DOCTYPE html>
