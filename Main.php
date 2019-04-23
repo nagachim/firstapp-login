@@ -41,7 +41,7 @@ $array = pg_fetch_result($result ,1 ,0);
     </head>
     <body>
         <h1>ÉÅÉCÉìâÊñ </h1>
-        <p>ÇÊÇ§Ç±Çª<u><?php echo htmlspecialchars($select, ENT_QUOTES,sjis); ?></u>Ç≥ÇÒ</p>
+        <p>ÇÊÇ§Ç±Çª<u><?php echo htmlspecialchars($connectString, ENT_QUOTES,sjis); ?></u>Ç≥ÇÒ</p>
         <div><?php
         if(!empty($result)){
         echo '<p>ÇÊÇ§Ç±Çªsalesforce <u><?php echo htmlspecialchars($array, ENT_QUOTES,sjis); ?></u>Ç≥ÇÒ</p>';
