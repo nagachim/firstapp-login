@@ -43,7 +43,7 @@ $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db[
     </head>
     <body>
         <h1>ÉÅÉCÉìâÊñ </h1>
-        <p>ÇÊÇ§Ç±Çª<u><?php echo htmlspecialchars($result, ENT_QUOTES,sjis); ?></u>Ç≥ÇÒ</p>
+        <p>ÇÊÇ§Ç±Çª<u><?php echo htmlspecialchars($name, ENT_QUOTES,sjis); ?></u>Ç≥ÇÒ</p>
         <div><?php
         if(!empty($result)){
         echo '<p>ÇÊÇ§Ç±Çªsalesforce <u><?php echo htmlspecialchars($name, ENT_QUOTES,sjis); ?></u>Ç≥ÇÒ</p>';
