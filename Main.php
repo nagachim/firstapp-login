@@ -26,7 +26,7 @@ $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db[
 //}else{
 //	//$select = sprintf("SELECT name FROM salesforce.user WHERE communitynickname = '%s'; ",$str);
 	$select = "SELECT name FROM salesforce.user WHERE communitynickname = 'nagachimu';";
-	$result = pg_query($select,$connectString);
+	$result = pg_query($connectString,$select);
 	$array = pg_fetch_array($result, 0, PGSQL_ASSOC);
 	$name = $array['name'];
 //}
