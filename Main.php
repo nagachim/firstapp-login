@@ -26,6 +26,7 @@ if(!$result = pg_connect($connectString)){
 }
 
 $select = sprintf("SELECT name FROM user WHERE communitynickname = '%s'; ",$str);
+$select = "SELECT name FROM user WHERE communitynickname = 'nagachimu';");
 $seleresult = pg_query($select);
 $array = pg_fetch_result($seleresult ,1 ,0);
 
