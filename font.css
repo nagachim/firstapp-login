@@ -1,3 +1,10 @@
 .font {
-    color: #0000FF;     /* •¶šFw’è */
+    color: #0000FF,
+    font-family: meiryo;
+}
+
+body{
+	background:#87cefa,
+	font-size: 20px,
+	color: black;
 }
