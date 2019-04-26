@@ -8,7 +8,6 @@ if (!isset($_SESSION['username'])) {
     exit;
 }
 $str = $_SESSION['username'];
-//$str = mb_convert_encoding($str,"utf-8","sjis");
 
 $dbUrl = parse_url(getenv('DATABASE_URL'));
 $db['host'] = $dbUrl['host'];
@@ -25,11 +24,11 @@ $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db[
 //    exit();
 //}else{
 //	//$select = sprintf("SELECT name FROM salesforce.user WHERE communitynickname = '%s'; ",$str);
-	$select = "SELECT name FROM salesforce.herokuconnect__c WHERE testtext__c = 'nagachim';";
+	$select = "SELECT * FROM salesforce.herokuconnect__c WHERE testtext__c = 'nagachim';";
 	$result = pg_query($connectString,$select);
-	$arr = pg_fetch_all($result);
+	$arr = pg_fetch_array($result);
 
-	print_r($arr);
+	$name = $arr[2];
 //}
 
 ?>
@@ -44,7 +43,7 @@ $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db[
     </head>
     <body>
         <h1>ÉÅÉCÉìâÊñ </h1>
-        <p>ÇÊÇ§Ç±Çª<u><?php echo htmlspecialchars($arr, ENT_QUOTES,sjis); ?></u>Ç≥ÇÒ</p>
+        <p>ÇÊÇ§Ç±Çª<u><?php echo htmlspecialchars($str, ENT_QUOTES,sjis); ?></u>Ç≥ÇÒ</p>
         <div><?php
         if(empty($result)){
         echo '<p>ÇÊÇ§Ç±Çªsalesforce <u><?php echo htmlspecialchars($name, ENT_QUOTES,sjis); ?></u>Ç≥ÇÒ</p>';

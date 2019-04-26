@@ -63,6 +63,8 @@ if (isset($_POST['login'])) {
             if(!$updresult){
                 $errorMessage = '予期せぬエラーが発生（ＵＰＤＡＴＥ）';
             }
+            //DB切断
+            pg_close($result);
             header("Location: Main.php");
         }
     }
