@@ -14,3 +14,14 @@
 	color: blue;
 	font-family: meiryo;
 }
+
+.image1{
+	font-size:18px;
+	color: black;
+	width: 300;
+	height: auto;
+	padding: 10px;
+	background: #0000FF;
+	text-align: center;
+	border: 1px solid #cccccc;
+}
