@@ -11,10 +11,10 @@
 
 div{
 	border: 1px solid #cccccc;
-	width: 600px;
+	width: 400px;
 	height: auto;
 	text-align: center;
-		font-size:18px;
+	font-size:18px;
 	padding: 10px;
-	background: #0000FF;
+	background: lightskyblue;
 }
