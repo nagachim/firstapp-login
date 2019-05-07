@@ -10,12 +10,12 @@ h1{
 }
 
 div{
-	border: 1px solid #cccccc;
 	width: 1080px;
 	background: lightskyblue;
 }
 
 section{
+	border: 1px solid #cccccc;
 	text-align: center;
 }
 
