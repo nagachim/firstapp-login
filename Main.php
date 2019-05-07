@@ -53,7 +53,7 @@ if(!$result = pg_connect($connectString)){
         </ul>
         <div><?php
         if($str == 'nagachim'){
-            echo '<a href="secret.html">‚¨—V‚Ñ</a>';
+            echo '<a href="secret1.html">‚¨—V‚Ñ</a>';
         }?></div>
     </body>
 </html>

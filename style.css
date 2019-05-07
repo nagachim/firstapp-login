@@ -1,0 +1,16 @@
+.font {
+    color: #0000FF;
+    font-family: meiryo;
+}
+
+.body{
+	background:#87cefa;
+	font-size: 20px;
+	color: black;
+}
+
+.h1{
+	font-size:38px;
+	color: blue;
+	font-family: meiryo;
+}
