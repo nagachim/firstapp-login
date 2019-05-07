@@ -11,14 +11,10 @@
 
 div{
 	border: 1px solid #cccccc;
-}
-
-image{
-	font-size:18px;
-	color: black;
 	width: 600px;
 	height: auto;
+	text-align: center;
+		font-size:18px;
 	padding: 10px;
 	background: #0000FF;
-	text-align: center;
 }
