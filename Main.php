@@ -17,19 +17,18 @@ $db['dbname'] = ltrim($dbUrl['path'], '/');  // データベース名
 
 //DB接続情報作成
 $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
-////DB接続
-//if(!$result = pg_connect($connectString)){
-//    //接続失敗
-//    $errorMessage = '予期せぬエラーが発生';
-//    exit();
-//}else{
-//	//$select = sprintf("SELECT name FROM salesforce.user WHERE communitynickname = '%s'; ",$str);
-	$select = "SELECT * FROM salesforce.herokuconnect__c WHERE testtext__c = 'nagachim';";
-	$result = pg_query($connectString,$select);
+//DB接続
+if(!$result = pg_connect($connectString)){
+    //接続失敗
+    $errorMessage = '予期せぬエラーが発生';
+    exit();
+}else{
+	$select = sprintf("SELECT * FROM salesforce.herokuconnect__c WHERE testtext__c = '%s'; ",$str);
+	$result = pg_query($select);
 	$arr = pg_fetch_array($result);
 
 	$name = $arr[2];
-//}
+}
 
 ?>
 
