@@ -15,7 +15,13 @@ div{
 	background: lightskyblue;
 }
 
-left{
+section{
+	border: 1px solid #cccccc;
+	width: 1080px;
+	background: lightskyblue;
+}
+
+.left{
 	border: 1px solid #cccccc;
 	width: 520px;
 	height: auto;
@@ -26,12 +32,12 @@ left{
 	float: left;
 }
 
-right{
+.right{
 	border: 1px solid #cccccc;
 	width: 520px;
 	height: auto;
 	text-align: center;
 	font-size: 18px;
 	margin-top: 10px;
-	float: left;
+	float: right;
 }
