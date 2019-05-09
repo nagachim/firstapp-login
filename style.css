@@ -10,24 +10,36 @@ h1{
 }
 
 div{
-	width: 900px;
+	width: 600px;
 	background: lightskyblue;
+	height: auto;
+	margin-left: 100px;
 }
 
 section{
 	border: 1px solid #cccccc;
 	text-align: center;
-	height: 550px;	
-	font-size: 22px;
+}
+
+.left{
+	border: 1px solid #cccccc;
+	width: 520px;
+	height: auto;
+	font-size: 18px;
 	margin-top: 10px;
 	margin-right: 10px;
 	float: left;
 }
 
+.right{
+	border: 1px solid #cccccc;
+	width: 520px;
+	height: auto;
+	font-size: 18px;
+	float: right;
+}
+
 input[type=radio] {
-    width: 20px;
-    height: 20px;
-    vertical-align: middle;
-    margin-right: 0.5em;
+
     transform: scale(1.5);
 }
