@@ -7,13 +7,14 @@ h1{
 	font-size:38px;
 	color: blue;
 	font-family: meiryo;
+	margin-left: 150px;
 }
 
 div{
 	width: 600px;
 	background: lightskyblue;
 	height: auto;
-	margin-left: 100px;
+	margin-left: 200px;
 }
 
 section{
