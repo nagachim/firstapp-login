@@ -68,8 +68,6 @@ if (isset($_POST['login'])) {
             header("Location: Main.php");
         }
     }
-    //DB切断
-    pg_close($result);
 }
 ?>
 

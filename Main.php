@@ -44,9 +44,9 @@ if(!$result = pg_connect($connectString)){
         <h1>メイン画面</h1>
         <p>ようこそ<u><?php echo htmlspecialchars($str, ENT_QUOTES,sjis); ?></u>さん</p>
         <!-- <?php
-        if(empty($result)){ -->
-        echo '<p>ようこそsalesforce <u><?php echo htmlspecialchars($name, ENT_QUOTES); ?></u>さん</p>';
-        <!-- }?> -->
+        if(empty($result)){
+        echo '--><p>ようこそsalesforce <u><?php echo htmlspecialchars($name, ENT_QUOTES); ?></u>さん</p><!--';
+        }?> -->
         
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
