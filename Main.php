@@ -14,7 +14,6 @@ $db['host'] = $dbUrl['host'];
 $db['user'] = $dbUrl['user'];
 $db['pass'] = $dbUrl['pass'];
 $db['dbname'] = ltrim($dbUrl['path'], '/');  // データベース名
-$schema = $dbUrl['Schema'];
 
 //DB接続情報作成
 $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
@@ -44,7 +43,7 @@ if(!$result = pg_connect($connectString)){
     <body>
         <h1>メイン画面</h1>
 
-        <p>ようこそ<u><?php echo htmlspecialchars($schema, ENT_QUOTES,utf-8); ?> 会員 <?php echo htmlspecialchars($name, ENT_QUOTES,utf-8); ?></u>さん</p>
+        <p>ようこそ<u> salesforce会員 <?php echo htmlspecialchars($name, ENT_QUOTES,utf-8); ?></u>さん</p>
         
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
