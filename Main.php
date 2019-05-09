@@ -43,7 +43,12 @@ if(!$result = pg_connect($connectString)){
     <body>
         <h1>メイン画面</h1>
         <p>ようこそ<u><?php echo htmlspecialchars($str, ENT_QUOTES,sjis); ?></u>さん</p>
-        <p>ようこそ<u><?php echo htmlspecialchars($name, ENT_QUOTES,sjis); ?></u>さん</p>
+        <p>ようこそ<u><?php echo htmlspecialchars($arr[0], ENT_QUOTES,sjis); ?></u>さん</p>
+                <p>ようこそ<u><?php echo htmlspecialchars($arr[1], ENT_QUOTES,sjis); ?></u>さん</p>
+                        <p>ようこそ<u><?php echo htmlspecialchars($arr[2], ENT_QUOTES,sjis); ?></u>さん</p>
+                                <p>ようこそ<u><?php echo htmlspecialchars($arr[3], ENT_QUOTES,sjis); ?></u>さん</p>
+                                        <p>ようこそ<u><?php echo htmlspecialchars($arr[4], ENT_QUOTES,sjis); ?></u>さん</p>
+                                                <p>ようこそ<u><?php echo htmlspecialchars($arr[5], ENT_QUOTES,sjis); ?></u>さん</p>
         <!-- <?php
         if(empty($result)){
         echo '-->
