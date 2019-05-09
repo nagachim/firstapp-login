@@ -1,8 +1,8 @@
 <?php
 session_start();
-header('Content-Type: text/html; charset=shift_JIS');
+header('Content-Type: text/html; charset=utf-8');
 
-// ƒƒOƒCƒ“ó‘Ôƒ`ƒFƒbƒN
+// ãƒ­ã‚°ã‚¤ãƒ³çŠ¶æ…‹ãƒã‚§ãƒƒã‚¯
 if (!isset($_SESSION['username'])) {
     header("Location: logout.php");
     exit;
@@ -13,17 +13,17 @@ $dbUrl = parse_url(getenv('DATABASE_URL'));
 $db['host'] = $dbUrl['host'];
 $db['user'] = $dbUrl['user'];
 $db['pass'] = $dbUrl['pass'];
-$db['dbname'] = ltrim($dbUrl['path'], '/');  // ƒf[ƒ^ƒx[ƒX–¼
+$db['dbname'] = ltrim($dbUrl['path'], '/');  // ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹å
 
-//DBÚ‘±î•ñì¬
+//DBæŽ¥ç¶šæƒ…å ±ä½œæˆ
 $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
-//DBÚ‘±
+//DBæŽ¥ç¶š
 if(!$result = pg_connect($connectString)){
-    //Ú‘±Ž¸”s
-    $errorMessage = '—\Šú‚¹‚ÊƒGƒ‰[‚ª”­¶';
+    //æŽ¥ç¶šå¤±æ•—
+    $errorMessage = 'äºˆæœŸã›ã¬ã‚¨ãƒ©ãƒ¼ãŒç™ºç”Ÿ';
     exit();
 }else{
-	$select = sprintf("SELECT * FROM salesforce.herokuconnect__c WHERE testtext__c = '%s'; ",$str);
+	$select = sprintf("SELECT * FROM salesforce.test__c WHERE testname__c = '%s'; ",$str);
 	$result = pg_query($select);
 	$arr = pg_fetch_array($result);
 
@@ -35,25 +35,25 @@ if(!$result = pg_connect($connectString)){
 <!DOCTYPE html>
 <html lang="ja">
     <head>
-        <meta charset="shift_JIS">
-        <title>ƒƒCƒ“</title>
+        <meta charset="utf-8">
+        <title>ãƒ¡ã‚¤ãƒ³</title>
         <link rel= "stylesheet" href="font.css">
         <script src="script.js"></script>
     </head>
     <body>
-        <h1>ƒƒCƒ“‰æ–Ê</h1>
-        <p>‚æ‚¤‚±‚»<u><?php echo htmlspecialchars($str, ENT_QUOTES,sjis); ?></u>‚³‚ñ</p>
+        <h1>ãƒ¡ã‚¤ãƒ³ç”»é¢</h1>
+        <p>ã‚ˆã†ã“ã<u><?php echo htmlspecialchars($str, ENT_QUOTES,sjis); ?></u>ã•ã‚“</p>
         <div><?php
         if(empty($result)){
-        echo '<p>‚æ‚¤‚±‚»salesforce <u><?php echo htmlspecialchars($name, ENT_QUOTES,sjis); ?></u>‚³‚ñ</p>';
+        echo '<p>ã‚ˆã†ã“ãsalesforce <u><?php echo htmlspecialchars($name, ENT_QUOTES); ?></u>ã•ã‚“</p>';
         }?></div>
         
         <ul>
-            <li><a href="logout.php">ƒƒOƒAƒEƒg</a></li>
+            <li><a href="logout.php">ãƒ­ã‚°ã‚¢ã‚¦ãƒˆ</a></li>
         </ul>
         <div><?php
         if($str == 'nagachim'){
-            echo '<a href="secret1.html">‚¨—V‚Ñ</a>';
+            echo '<a href="secret1.html">ãŠéŠã³</a>';
         }?></div>
     </body>
 </html>
