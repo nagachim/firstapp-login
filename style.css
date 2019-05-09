@@ -22,7 +22,7 @@ section{
 .left{
 	border: 1px solid #cccccc;
 	width: 500px;
-	height: 550px;
+	height: 600px;
 	font-size: 22px;
 	margin-top: 10px;
 	margin-right: 10px;
@@ -32,7 +32,7 @@ section{
 .right{
 	border: 1px solid #cccccc;
 	width: 500px;
-	height: 550px;
+	height: 600px;
 	font-size: 22px;
 	margin-top: 10px;
 	float: right;
