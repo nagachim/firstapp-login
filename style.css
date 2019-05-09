@@ -39,6 +39,9 @@ section{
 }
 
 input[type=radio] {
+    width: 30px;
+    height: 30px;
     vertical-align: middle;
+    margin-right: 0.5em;
     transform: scale(1.5);
 }
