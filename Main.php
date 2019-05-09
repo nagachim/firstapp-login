@@ -45,7 +45,7 @@ if(!$result = pg_connect($connectString)){
         <p>ようこそ<u><?php echo htmlspecialchars($str, ENT_QUOTES,sjis); ?></u>さん</p>
         <p>ようこそ<u><?php echo htmlspecialchars($arr[0], ENT_QUOTES,sjis); ?></u>さん</p>
                 <p>ようこそ<u><?php echo htmlspecialchars($arr[1], ENT_QUOTES,sjis); ?></u>さん</p>
-                        <p>ようこそ<u><?php echo htmlspecialchars($arr[2], ENT_QUOTES,sjis); ?></u>さん</p>
+                        <p>ようこそ<u><?php echo htmlspecialchars($arr[2], ENT_QUOTES,utf-8); ?></u>さん</p>
                                 <p>ようこそ<u><?php echo htmlspecialchars($arr[3], ENT_QUOTES,sjis); ?></u>さん</p>
                                         <p>ようこそ<u><?php echo htmlspecialchars($arr[4], ENT_QUOTES,sjis); ?></u>さん</p>
                                                 <p>ようこそ<u><?php echo htmlspecialchars($arr[5], ENT_QUOTES,sjis); ?></u>さん</p>
