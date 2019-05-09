@@ -11,19 +11,18 @@ h1{
 
 div{
 	width: 900px;
-		height: 600px;
+	height: 600px;
 	background: lightskyblue;
 }
 
 section{
 	border: 1px solid #cccccc;
 	text-align: center;
+		height: 600px;
 }
 
 .left{
 	border: 1px solid #cccccc;
-	width: 500px;
-	height: 600px;
 	font-size: 22px;
 	margin-top: 10px;
 	margin-right: 10px;
@@ -32,8 +31,6 @@ section{
 
 .right{
 	border: 1px solid #cccccc;
-	width: 500px;
-	height: 600px;
 	font-size: 22px;
 	margin-top: 10px;
 	float: right;
