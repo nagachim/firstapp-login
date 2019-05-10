@@ -59,3 +59,28 @@ table{
     cursor: pointer;
     display: inline;
 }
+
+#mom_layer{
+  display: none;
+  position: fixed ;
+  top: 0;
+  left: 0%;
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0.60;
+  filter: alpha(opacity=60);
+} 
+#kids_layer{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -240px;
+  margin-left: -320px;
+} 
+#kids_layer img.close{
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  cursor: pointer;
