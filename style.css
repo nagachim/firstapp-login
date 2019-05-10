@@ -2,9 +2,20 @@ font {
     color: #0000FF;
     font-family: meiryo;
 }
-body{
+
+html{
 	text-align:center;
 	margin: 0 auto;
+	width: 700px;
+	background: lightskyblue;
+	height: 1000px;
+	font-size:22px;
+}
+
+body{
+	margin: 0;
+  	padding: 0;
+  	height: 100%;
 }
 
 h1{
@@ -14,17 +25,10 @@ h1{
 }
 
 h2{
-	font-size:25px;
+	font-size:18px;
 	font-family: meiryo;
 }
 
-div{
-	margin:0 auto;
-	width: 700px;
-	background: lightskyblue;
-	height: 1000px;
-	font-size:22px;
-}
 
 section{
 	border: 1px solid #cccccc;
@@ -37,27 +41,6 @@ input[type=radio] {
 
 table{
 	left:10px;
-}
-
-.popup:focus, .popup:active {
-    position: fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin:auto;
-    height: auto;
-    z-index: 100;
-    background: #fff;
-    padding: 20px;
-    outline: 1px solid #aaa;
-    max-width:60vw;/* âÊëúÇ™ëÂÇ´Ç¢èÍçáÇÕÅAìKãXí≤êÆ */
-}
-.popup {
-    height: 96px;
-    width:auto;
-    cursor: pointer;
-    display: inline;
 }
 
 #mom_layer{
@@ -84,3 +67,23 @@ table{
   top: -10px;
   right: -10px;
   cursor: pointer;
+}
+#modal_window h1{
+  margin: 20px 50px;
+  font-size: 28px;
+  border-left: 10px solid #7BAEB5;
+  border-bottom: 1px solid #7BAEB5;
+  padding: 10px;
+  width: 600px;
+}
+#modal_window tr{
+  width: 700px;
+  list-style-type: none;
+}
+#modal_window tr td{
+  float: left;
+}
+#modal_window tr td img{
+  border: 0;
+  margin: 10px;
+}

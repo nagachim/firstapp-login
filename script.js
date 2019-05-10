@@ -6,7 +6,7 @@ $(function(){
 	});
 	$("a.modal").click(function(){
 		$("#mom_layer").show();
-		$("#kids_layer").show().html("<img src='../img/close.png' class='close' />"+"<img src='"+$(this).attr("href")+"'>");
+		$("#kids_layer").show().html("<img src='img/close.png' class='close' />"+"<img src='"+$(this).attr("href")+"'>");
 		$("#kids_layer img.close").click(function(){
 		$("#kids_layer").hide();
 		$("#mom_layer").hide();
