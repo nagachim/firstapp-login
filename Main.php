@@ -52,7 +52,10 @@ if(!$result = pg_connect($connectString)){
         <br>
         <label for="Sex">性別：</label><input type="text" id="sex" name="sex" value="<?php echo htmlspecialchars($sex, ENT_QUOTES,utf-8); ?>">
         <br>
-        
+        <label for="Add">住所：</label><input type="text" id="add" name="add" value="<?php echo htmlspecialchars($add, ENT_QUOTES,utf-8); ?>">
+        <br>
+        <label for="Bikou">備考：</label><textarea name="bikou" rows="4" cols="40"><?php echo htmlspecialchars($bikou, ENT_QUOTES,utf-8); ?></textarea>
+        <br>
         <a href="logout.php">ログアウト</a></li>
         
     </body>
