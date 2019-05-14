@@ -77,7 +77,6 @@ if (isset($_POST['login'])) {
         <meta charset="UTF-8">
         <title>ログイン画面</title>
         <link rel= "stylesheet" href="style.css">
-        <script src="script.js"></script>
     </head>
     <body>
         <H1>ログイン画面</h1>

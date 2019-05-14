@@ -37,8 +37,7 @@ if(!$result = pg_connect($connectString)){
     <head>
         <meta charset="utf-8">
         <title>メイン</title>
-        <link rel= "stylesheet" href="font.css">
-        <script src="script.js"></script>
+        <link rel= "stylesheet" href="style.css">
     </head>
     <body>
         <h1>メイン画面</h1>

@@ -81,6 +81,7 @@ if (isset($_POST["signUp"])) {
     <head>
             <meta charset="utf-8">
             <title>新規登録</title>
+            <link rel= "stylesheet" href="style.css">
     </head>
     <body>
         <h1>新規登録画面</h1>
