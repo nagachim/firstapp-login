@@ -28,6 +28,10 @@ if(!$result = pg_connect($connectString)){
 	$arr = pg_fetch_array($result);
 
 	$name = $arr[2];
+	$bikou = $arr[9];
+	$sex = $arr[10];
+	$add = $arr[11];
+	$age = $arr[12];
 }
 
 ?>
@@ -44,12 +48,13 @@ if(!$result = pg_connect($connectString)){
 
         <p>ようこそ<u> salesforce会員 <?php echo htmlspecialchars($name, ENT_QUOTES,utf-8); ?></u>さん</p>
         
+        <label for="Age">年齢：</label><input type="text" id="age" name="age" value="<?php echo htmlspecialchars($age, ENT_QUOTES,utf-8); ?>">
+        <br>
+        <label for="Sex">性別：</label><input type="text" id="sex" name="sex" value="<?php echo htmlspecialchars($sex, ENT_QUOTES,utf-8); ?>">
+        <br>
+        
         <ul>
             <li><a href="logout.php">ログアウト</a></li>
         </ul>
-        <div><?php
-        if($str == 'nagachim'){
-            echo '<a href="secret1.html">お遊び</a>';
-        }?></div>
     </body>
 </html>
