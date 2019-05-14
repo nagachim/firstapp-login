@@ -53,8 +53,7 @@ if(!$result = pg_connect($connectString)){
         <label for="Sex">性別：</label><input type="text" id="sex" name="sex" value="<?php echo htmlspecialchars($sex, ENT_QUOTES,utf-8); ?>">
         <br>
         
-        <ul>
-            <li><a href="logout.php">ログアウト</a></li>
-        </ul>
+        <a href="logout.php">ログアウト</a></li>
+        
     </body>
 </html>
