@@ -28,9 +28,10 @@ h2{
 
 section{
 	border: 1px solid #cccccc;
+	height:150px;
 }
 
-textarea{
+body.textarea{
 	resize:none;
 	vertical-align:top;
 }

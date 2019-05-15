@@ -64,7 +64,6 @@ if(!$result = pg_connect($connectString)){
         <label for="Bikou">備考：</label><textarea name="bikou" rows="4" cols="22"><?php echo htmlspecialchars($bikou, ENT_QUOTES,utf-8); ?></textarea>
         </section>
         <br>
-        <br>
         <input type="submit" id="update" name="update" value="更新">
         <br>
         <a href="logout.php">ログアウト</a>
