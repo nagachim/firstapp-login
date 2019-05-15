@@ -48,21 +48,22 @@ if(!$result = pg_connect($connectString)){
 
         <p>ようこそ<u> salesforce会員 <?php echo htmlspecialchars($name, ENT_QUOTES,utf-8); ?></u>さん</p>
         
-        <section>
-        <label for="Age">年齢：</label><input type="text" id="age" name="age" value="<?php echo htmlspecialchars($age, ENT_QUOTES,utf-8); ?>">
-        </section>
+		<section>
+			<label for="Age">年齢：</label><input type="text" id="age" name="age" value="<?php echo htmlspecialchars($age, ENT_QUOTES,utf-8); ?>">
+		</section>
         <br>
-        <section>
-        <label for="Sex">性別：</label><input type="text" id="sex" name="sex" value="<?php echo htmlspecialchars($sex, ENT_QUOTES,utf-8); ?>">
-        </section>
+		<section>
+			<label for="Sex">性別：</label><input type="text" id="sex" name="sex" value="<?php echo htmlspecialchars($sex, ENT_QUOTES,utf-8); ?>">
+		<section>
         <br>
-        <section>
-        <label for="Add">住所：</label><input type="text" id="add" name="add" value="<?php echo htmlspecialchars($add, ENT_QUOTES,utf-8); ?>">
-        </section>
-        <br>
-        <section>
-        <label for="Bikou">備考：</label><textarea name="bikou" rows="4" cols="22"><?php echo htmlspecialchars($bikou, ENT_QUOTES,utf-8); ?></textarea>
-        </section>
+		<section>
+			<label for="Add">住所：</label><input type="text" id="add" name="add" value="<?php echo htmlspecialchars($add, ENT_QUOTES,utf-8); ?>">
+		<section>
+		<br>
+		<section>
+			<label for="Bikou">備考：</label>
+				<textarea name="bikou" rows="4" cols="22" vertical-align:top><?php echo htmlspecialchars($bikou, ENT_QUOTES,utf-8); ?></textarea>
+		<section>
         <br>
         <input type="submit" id="update" name="update" value="更新">
         <br>
