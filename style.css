@@ -30,3 +30,7 @@ h2{
 section{
 	border: 1px solid #cccccc;
 }
+
+textarea{
+	margin-top: 10px;
+}
