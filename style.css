@@ -3,7 +3,7 @@ html{
 }
 
 body{
-	margin: 0;
+	margin: 0 auto;
   	padding: 0;
   	height: 100%;
 	text-align:center;
@@ -28,10 +28,9 @@ h2{
 
 section{
 	border: 1px solid #cccccc;
-	height:150px;
 }
 
-body.textarea{
+.textarea{
 	resize:none;
 	vertical-align:top;
 }
