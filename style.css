@@ -1,15 +1,16 @@
 html{
-
+	text-align:center;
+	margin: 0 auto;
+	width: 400px;
+	background: lightskyblue;
+	height: 1000px;
+	font-size:15px;
 }
 
 body{
-	margin: 0 auto;
+	margin: 0;
   	padding: 0;
   	height: 100%;
-	text-align:center;
-	width: 400px;
-	background: lightskyblue;
-	font-size:15px;
 }
 
 h1{
