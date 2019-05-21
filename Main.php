@@ -34,10 +34,10 @@ if(!$result = pg_connect($connectString)){
 	$age = $arr[12];
 }
 
-if(isset($_POST['update'])){
-	$update = sprintf("UPDATE salesforce.test__c SET testbikou__c=$_POST['bikou'],testsex__c=$_POST['sex'], testadd__c = $_POST['add'], testage__c = $_POST['age'] ");
-	$result = pg_query($update);
-}
+//if(isset($_POST['update'])){
+//	$update = sprintf("UPDATE salesforce.test__c SET testbikou__c=$_POST['bikou'],testsex__c=$_POST['sex'], testadd__c = $_POST['add'], testage__c = $_POST['age'] ");
+//	$result = pg_query($update);
+//}
 
 ?>
 
