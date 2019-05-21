@@ -41,6 +41,12 @@ if(isset($_POST['update'])){
 	$age = $_POST['age'];
 	$update = sprintf("UPDATE salesforce.test__c SET testbikou__c = '%s',testsex__c = '%s', testadd__c = '%s', testage__c = '%d';" ,$bikou,$sex,$add,$age);
 	$result = pg_query($update);
+	if($result = FALSE){
+		$Message = '更新に失敗しました。';
+	}
+	else{
+		$Message = '更新完了';
+	}
 }
 
 ?>
@@ -75,6 +81,7 @@ if(isset($_POST['update'])){
 					<textarea name="bikou" rows="4" cols="22" vertical-align:top><?php echo htmlspecialchars($bikou, ENT_QUOTES,utf-8); ?></textarea>
 			</section>
 	        <br>
+	        <div><font color="#ff0000"><?php echo htmlspecialchars($Message, ENT_QUOTES); ?></font></div>
 	        <input type="submit" id="update" name="update" value="更新">
 	        <br>
 	        <a href="logout.php">ログアウト</a>
