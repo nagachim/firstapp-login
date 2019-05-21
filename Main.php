@@ -51,16 +51,16 @@ if(!$result = pg_connect($connectString)){
 		<section>
 			<label for="Age">年齢：</label><input type="text" id="age" name="age" value="<?php echo htmlspecialchars($age, ENT_QUOTES,utf-8); ?>">
 		</section>
-        <br>
+        
 		<section>
 			<label for="Sex">性別：</label><input type="text" id="sex" name="sex" value="<?php echo htmlspecialchars($sex, ENT_QUOTES,utf-8); ?>">
 		<section>
-        <br>
+        
 		<section>
 			<label for="Add">住所：</label><input type="text" id="add" name="add" value="<?php echo htmlspecialchars($add, ENT_QUOTES,utf-8); ?>">
 		<section>
-		<br>
-		<section>
+		
+		<section class="bikou">
 			<label for="Bikou">備考：</label>
 				<textarea name="bikou" rows="4" cols="22" vertical-align:top><?php echo htmlspecialchars($bikou, ENT_QUOTES,utf-8); ?></textarea>
 		<section>

@@ -79,7 +79,7 @@ if (isset($_POST['login'])) {
         <link rel= "stylesheet" href="style.css">
     </head>
     <body>
-        <H1>ログイン画面</h1>
+        <h1>ログイン画面</h1>
         <form id="loginForm" name="loginForm" action="" method="POST" accept-charset="UTF-8">
             <fieldset>
                 <legend>ログイン情報</legend>

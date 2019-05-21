@@ -28,10 +28,11 @@ h2{
 }
 
 section{
-	border: 1px solid #cccccc;
+	border: 2px solid black;
+	height:30px;
 }
 
-.textarea{
+.bikou textarea{
 	resize:none;
 	vertical-align:top;
 }
