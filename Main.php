@@ -48,7 +48,6 @@ if(isset($_POST['update'])){
 		$Message = '更新完了';
 	}
 }
-
 ?>
 
 <!DOCTYPE html>
