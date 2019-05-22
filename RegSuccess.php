@@ -11,6 +11,7 @@ header('Content-Type: text/html; charset=utf-8');
     <head>
             <meta charset="utf-8">
             <title>新規登録完了画面</title>
+            <link rel= "stylesheet" href="style.css">
     </head>
     <body>
         <h1>登録完了</h1>
