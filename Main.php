@@ -65,11 +65,11 @@ if(isset($_POST['update'])){
 	        
 			<section>
 				<label for="Age">年齢：</label><input type="text" id="age" name="age" value="<?php echo htmlspecialchars($age, ENT_QUOTES,utf-8); ?>">
-
+				<br>
 				<label for="Sex">性別：</label><input type="text" id="sex" name="sex" value="<?php echo htmlspecialchars($sex, ENT_QUOTES,utf-8); ?>">
-
+				<br>
 				<label for="Add">住所：</label><input type="text" id="add" name="add" value="<?php echo htmlspecialchars($add, ENT_QUOTES,utf-8); ?>">
-			
+				<br>
 				<div class="bikou">
 					<label for="Bikou">備考：</label>
 						<textarea name="bikou" rows="4" cols="22" vertical-align:top><?php echo htmlspecialchars($bikou, ENT_QUOTES,utf-8); ?></textarea>
