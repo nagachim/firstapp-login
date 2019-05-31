@@ -63,19 +63,25 @@ if(isset($_POST['update'])){
 
 	        <p>ようこそ<u> salesforce会員 <?php echo htmlspecialchars($name, ENT_QUOTES,utf-8); ?></u>さん</p>
 	        
-			<section>
-				<label for="Age">年齢：</label><input type="text" id="age" name="age" value="<?php echo htmlspecialchars($age, ENT_QUOTES,utf-8); ?>">
-				<br>
-				<label for="Sex">性別：</label><input type="text" id="sex" name="sex" value="<?php echo htmlspecialchars($sex, ENT_QUOTES,utf-8); ?>">
-				<br>
-				<label for="Add">住所：</label><input type="text" id="add" name="add" value="<?php echo htmlspecialchars($add, ENT_QUOTES,utf-8); ?>">
-				<br>
-				<br>
-				<div class="bikou">
-					<label for="Bikou">備考：</label>
-						<textarea name="bikou" rows="4" cols="22"><?php echo htmlspecialchars($bikou, ENT_QUOTES,utf-8); ?></textarea>
-				</div>
-			</section>
+			<table border="1" cellspacing="0" cellpadding="1">
+				<tr>
+					<td>
+					<label for="Age">年齢：</label><input type="text" id="age" name="age" value="<?php echo htmlspecialchars($age, ENT_QUOTES,utf-8); ?>">
+					</td>
+					<td>
+					<label for="Sex">性別：</label><input type="text" id="sex" name="sex" value="<?php echo htmlspecialchars($sex, ENT_QUOTES,utf-8); ?>">
+					</td>
+					<td>
+					<label for="Add">住所：</label><input type="text" id="add" name="add" value="<?php echo htmlspecialchars($add, ENT_QUOTES,utf-8); ?>">
+					</td>>
+					<td>
+						<div class="bikou">
+							<label for="Bikou">備考：</label>
+								<textarea name="bikou" rows="4" cols="22"><?php echo htmlspecialchars($bikou, ENT_QUOTES,utf-8); ?></textarea>
+						</div>
+					</td>
+				</tr>
+			</table>
 	        <br>
 	        <div><font color="#ff0000"><?php echo htmlspecialchars($Message, ENT_QUOTES); ?></font></div>
 	        <input type="submit" id="update" name="update" value="更新">
