@@ -33,11 +33,11 @@ h2{
 	vertical-align:top;
 }
 
-.tr{
+tr{
   width: 560px;
   list-style-type: none;
 }
-.tr td{
+tr td{
 	float: left;
 	width:135px;
 	height:130px;
