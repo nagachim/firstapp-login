@@ -103,7 +103,7 @@ if (isset($_POST["signUp"])) {
     }
 //////////////////////////
     //DB切断
-    pg_close($result);
+//    pg_close($result);
 //////////////////////////
 	$mysqli->close();
     
