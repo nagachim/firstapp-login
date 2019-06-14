@@ -74,7 +74,7 @@ if (isset($_POST["signUp"])) {
 		$select = sprintf("SELECT username FROM heroku_f900e31a135809c.userinfo WHERE username='%s';",$name);
 		$result = $mysqli->query($select);
 		
-		$array = $result->fetch_array(MYSQLI_ASSOC);
+		$array[] = $result->fetch_array(MYSQLI_ASSOC);
 
         //DB検索結果で入力した名前が存在した場合
         //新たに登録できないようにエラーメッセージではじく
