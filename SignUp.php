@@ -71,7 +71,7 @@ if (isset($_POST["signUp"])) {
 		
 		
 		//SELECT文 ステートメント
-		$select = sprintf("SELECT username FROM heroku_f900e31a135809c.userinfo WHERE username='%s'",$name);
+		$select = sprintf("SELECT username FROM heroku_f900e31a135809c.userinfo WHERE username='%s';",$name);
 		$result = $mysqli->query($select);
 		
 		$array = $result->fetch_array(MYSQLI_ASSOC);
@@ -100,6 +100,7 @@ if (isset($_POST["signUp"])) {
         }
     } else if($_POST["password"] != $_POST["password2"]) {
         $errorMessage = 'パスワードが確認用と一致しません。';
+		$errorMessage = sprintf("SELECT username FROM heroku_f900e31a135809c.userinfo WHERE username='%s';",$_POST['username']);
     }
 //////////////////////////
     //DB切断
