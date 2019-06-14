@@ -93,7 +93,7 @@ if (isset($_POST["signUp"])) {
 //            pg_close($result);
 //////////////////////////////////////////////////////////////////////
 			$insert = sprintf("INSERT INTO heroku_f900e31a135809c.userinfo( username, password, nickname, logincnt, systimestamp) VALUES ( '%s', '%s', '%s', 0, current_timestamp)",$name,$pass,$nickname);
-
+			$mysqli->query($insert);
             
             //登録成功画面へ
             header("Location: RegSuccess.php");
