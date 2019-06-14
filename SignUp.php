@@ -4,12 +4,21 @@ session_start();
 
 header('Content-Type: text/html; charset=utf-8');
 
-$dbUrl = parse_url(getenv('DATABASE_URL'));
+$dbUrl = parse_url($_SERVER['CLEARDB_DATABASE_URL']);
 
-$db['host'] = $dbUrl['host'];  // DBサーバのURL
+$db['dbname'] = ltrim($dbUrl['path'], '/');  // データベース名
+$dsn = "mysql:host={$dbUrl['host']};dbname={$db['dbname']};charset=utf8";
+
+
 $db['user'] = $dbUrl['user'];  // ユーザー名
 $db['pass'] = $dbUrl['pass'];  // ユーザー名のパスワード
-$db['dbname'] = ltrim($dbUrl['path'], '/');;  // データベース名
+
+//接続の際のオプション
+$options = array(
+	PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+	PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+	PDO::MYSQL_ATTR_USE_BUFFERED_QUERY =>true,
+);
 
 // エラーメッセージ、登録完了メッセージの初期化
 $errorMessage = "";
@@ -37,24 +46,42 @@ if (isset($_POST["signUp"])) {
         $pass = $_POST['password'];
         $nickname = $_POST['nickname'];
 
+/////////////////////////////////////////////////////////////Postgres
         //DB接続情報作成
-        $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
+//        $connectString = "host={$db['host']} dbname={$db['dbname']} port=5432 user={$db['user']} password={$db['pass']}";
         //DB接続
-        if(!$result = pg_connect($connectString)){
+//        if(!$result = pg_connect($connectString)){
             //接続失敗
-            $errorMessage = '予期せぬエラーが発生（管理者問い合わせ）';
-            exit();
-        }
-        
-        $select = sprintf("SELECT username FROM userInfo WHERE username='%s'",$name);
-        $selectresult = pg_query($select);
-        $array = pg_fetch_array($selectresult,0,PGSQL_NUM);
+//            $errorMessage = '予期せぬエラーが発生（管理者問い合わせ）';
+//            exit();
+//        }
+//        $select = sprintf("SELECT username FROM userInfo WHERE username='%s'",$name);
+//        $selectresult = pg_query($select);
+//        $array = pg_fetch_array($selectresult,0,PGSQL_NUM);
+/////////////////////////////////////////////////////////////
+
+		//mysql接続処理
+		$mysqli = new mysqli($dbUrl['host'],$db['user'],$db['pass'],$db['dbname']);
+		if($mysqli->connect_error){
+			echo $mysqli->connect_error;
+			exit();
+		}else{
+			$mysqli->set_charset("utf8");
+		}
+		
+		
+		//SELECT文 ステートメント
+		$select = sprintf("SELECT username FROM heroku_f900e31a135809c.userinfo WHERE username='%s'",$name);
+		$result = $mysqli->query($select);
+		
+		$array = $result->fetch_array(MYSQLI_ASSOC);
 
         //DB検索結果で入力した名前が存在した場合
         //新たに登録できないようにエラーメッセージではじく
         if($name == $array[0]){
-            $errorMessage='既に使用されているユーザ名です';  
+            $errorMessage='既に使用されているユーザ名です'; 
         }else{
+//////////////////////////////////////////////////////////////////////
             //ユーザ情報登録処理
             $insert = sprintf("INSERT INTO userInfo( username, password, nickname, logincnt, systimestamp) VALUES ( '%s', '%s', '%s', 0, current_timestamp)",$name,$pass,$nickname);
             $insertresult = pg_query($insert);
@@ -64,6 +91,9 @@ if (isset($_POST["signUp"])) {
             
             //DB切断
             pg_close($result);
+//////////////////////////////////////////////////////////////////////
+			$insert = sprintf("INSERT INTO heroku_f900e31a135809c.userinfo( username, password, nickname, logincnt, systimestamp) VALUES ( '%s', '%s', '%s', 0, current_timestamp)",$name,$pass,$nickname);
+
             
             //登録成功画面へ
             header("Location: RegSuccess.php");
@@ -71,11 +101,14 @@ if (isset($_POST["signUp"])) {
     } else if($_POST["password"] != $_POST["password2"]) {
         $errorMessage = 'パスワードが確認用と一致しません。';
     }
+//////////////////////////
     //DB切断
     pg_close($result);
+//////////////////////////
+	$mysqli->close();
+    
 }
 ?>
-
 <!doctype html>
 <html>
     <head>
