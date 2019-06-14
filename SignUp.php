@@ -83,14 +83,14 @@ if (isset($_POST["signUp"])) {
         }else{
 //////////////////////////////////////////////////////////////////////
             //ユーザ情報登録処理
-            $insert = sprintf("INSERT INTO userInfo( username, password, nickname, logincnt, systimestamp) VALUES ( '%s', '%s', '%s', 0, current_timestamp)",$name,$pass,$nickname);
-            $insertresult = pg_query($insert);
-            if(!$insertresult){
-                $errorMessage = '予期せぬエラーが発生（ＩＮＳＥＲＴ）';
-            }
+//            $insert = sprintf("INSERT INTO userInfo( username, password, nickname, logincnt, systimestamp) VALUES ( '%s', '%s', '%s', 0, current_timestamp)",$name,$pass,$nickname);
+//            $insertresult = pg_query($insert);
+//            if(!$insertresult){
+//                $errorMessage = '予期せぬエラーが発生（ＩＮＳＥＲＴ）';
+//            }
             
             //DB切断
-            pg_close($result);
+//            pg_close($result);
 //////////////////////////////////////////////////////////////////////
 			$insert = sprintf("INSERT INTO heroku_f900e31a135809c.userinfo( username, password, nickname, logincnt, systimestamp) VALUES ( '%s', '%s', '%s', 0, current_timestamp)",$name,$pass,$nickname);
 
@@ -105,7 +105,6 @@ if (isset($_POST["signUp"])) {
     //DB切断
 //    pg_close($result);
 //////////////////////////
-	$mysqli->close();
     
 }
 ?>
