@@ -1,7 +1,7 @@
 html{
 	text-align:center;
 	margin: 0 auto;
-	width: 600px;
+	width: auto;
 	background: lightskyblue;
 	height: 1000px;
 	font-size:15px;
@@ -34,7 +34,7 @@ h2{
 }
 
 tr{
-  width: 560px;
+  width: auto;
   list-style-type: none;
 }
 tr td{
