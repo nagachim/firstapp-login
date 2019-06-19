@@ -34,6 +34,7 @@ h2{
 }
 
 tr{
+	width: 500px;
   list-style-type: none;
 }
 tr td{
