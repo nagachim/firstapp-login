@@ -133,6 +133,7 @@ if (isset($_POST["signUp"])) {
                 <br>
                 <input type="submit" id="signUp" name="signUp" value="登録">
             </fieldset>
+            <div class="husen">付箋だよー</div>
         </form>
         <br>
         <form action="index.php">
