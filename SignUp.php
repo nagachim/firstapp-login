@@ -118,7 +118,6 @@ if (isset($_POST["signUp"])) {
     </head>
     <body>
         <h1>新規登録画面</h1>
-                    <div class="husen">付箋だよー</div>
         <form id="SignUpForm" name="SignUpForm" action="" method="POST">
             <fieldset>
                 <legend>新規登録者フォーム</legend>
@@ -134,6 +133,7 @@ if (isset($_POST["signUp"])) {
                 <br>
                 <input type="submit" id="signUp" name="signUp" value="登録">
             </fieldset>
+                                <div class="husen">付箋だよー</div>
         </form>
         <br>
         <form action="index.php">
